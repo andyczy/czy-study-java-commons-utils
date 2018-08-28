@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>czy.java.cn</groupId>
+    <artifactId>czy-study-java-commons-utils</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <modules>
+        <module>commons-utils</module>
+        <module>json</module>
+        <module>xml</module>
+        <module>lambda</module>
+        <module>base</module>
+    </modules>
+
+
+    <!-- 集中定义依赖版本号 mvn install -DskipTests-->
+    <properties>
+        <!--spring-->
+        <spring.version>4.1.3.RELEASE</spring.version>
+        <!--mybatis-->
+        <mybatis.version>3.2.8</mybatis.version>
+        <!--mybatis.spring-->
+        <mybatis.spring.version>1.2.2</mybatis.spring.version>
+        <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
+        <!--mysql-->
+        <mysql.version>6.0.6</mysql.version>
+        <!--下面这两个是springAOP需要用到-->
+        <aspectjweaver.version>1.7.2</aspectjweaver.version>
+        <persistence-api.version>1.0.2</persistence-api.version>
+        <!--分页插件-->
+        <pagehelper.version>4.1.6</pagehelper.version>
+        <pagehelper.version>3.4.2-fix</pagehelper.version>
+        <!--<mybatis.paginator.version>1.2.17</mybatis.paginator.version>-->
+        <jsqlparser.version>0.9.5</jsqlparser.version>
+        <!-- 连接池 -->
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <!-- 日志 -->
+        <logback-classic.version>1.1.7</logback-classic.version>
+        <logback-ext-spring.version>0.1.4</logback-ext-spring.version>
+        <log4j.version>1.2.17</log4j.version>
+        <!--junit-->
+        <junit.version>4.12</junit.version>
+        <!-- JSP相关 -->
+        <javax.servlet-api-version>3.1.0</javax.servlet-api-version>
+        <jsp-api.version>2.2</jsp-api.version>
+        <jstl.version>1.2</jstl.version>
+        <servlet-api.version>2.5</servlet-api.version>
+        <javax.servlet-apiversion>3.1.0</javax.servlet-apiversion>
+        <javaee-api.version>7.0</javaee-api.version>
+        <jsp-api.version>2.2</jsp-api.version>
+        <!-- jackson -->
+        <jackson.version>2.4.2</jackson.version>
+        <!-- httpclient -->
+        <httpclient.version>4.3.5</httpclient.version>
+        <!-- 时间操作组件 -->
+        <joda-time.version>2.5</joda-time.version>
+        <!-- Apache工具组件 -->
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <commons-base.io.version>1.3.2</commons-base.io.version>
+        <commons-net.version>3.3</commons-net.version>
+        <!-- 上传组件 -->
+        <commons-fileupload.version>1.3.1</commons-fileupload.version>
+        <!-- Redis客户端 -->
+        <jedis.version>2.7.2</jedis.version>
+        <!-- solr-->
+        <solrj.version>4.10.3</solrj.version>
+        <!--dubbo-->
+        <dubbo.version>2.5.3</dubbo.version>
+        <!--zookeeper-->
+        <zookeeper.version>3.4.7</zookeeper.version>
+        <zkclient.version>0.1</zkclient.version>
+        <!--activemq-->
+        <activemq.version>5.11.2</activemq.version>
+        <!--jsp_and_freemarkerrker&ndash;&gt;-->
+        <freemarker.version>2.3.23</freemarker.version>
+        <!--quartz-->
+        <quartz.version>2.2.2</quartz.version>
+        <!--fastdfs-client-->
+        <fastdfs-client.version>1.25</fastdfs-client.version>
+    </properties>
+
+
+    <dependencies>
+        <!--junit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <!-- Mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis.spring.version}</version>
+        </dependency>
+        <!-- MySql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- 连接池commons-dbcp -->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${commons-dbcp.version}</version>
+        </dependency>
+        <!--github-->
+        <dependency>
+            <groupId>com.github.miemiedev</groupId>
+            <artifactId>mybatis-paginator</artifactId>
+            <version>${mybatis.paginator.version}</version>
+        </dependency>
+        <!--pagehelper   分页插件-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
+        <!-- jsqlparser  分页插件-->
+        <dependency>
+            <groupId>com.github.jsqlparser</groupId>
+            <artifactId>jsqlparser</artifactId>
+            <version>${jsqlparser.version}</version>
+        </dependency>
+
+
+        <!-- spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jms -->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework</groupId>-->
+        <!--<artifactId>spring-jms</artifactId>-->
+        <!--<version>${spring.version}</version>-->
+        <!--</dependency>-->
+        <!--spring-aspects-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--下面两个提供对 AspectJ 的支持，是 spring-aspects 所需要依赖的-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>${persistence-api.version}</version>
+        </dependency>
+    </dependencies>
+</project>

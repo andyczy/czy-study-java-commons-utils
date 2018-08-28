@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GBK"?>
+<Languages Cat="it">
+<lan id="1">
+<name>java</name>
+<IDE>eclipse</IDE>
+<name>C#</name>
+</lan>
+<lan id="1">
+<IDE>Visual Studio</IDE>
+</lan>
+</Languages>

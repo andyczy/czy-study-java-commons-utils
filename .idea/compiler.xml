@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="base" />
+        <module name="commons-utils" />
+        <module name="json" />
+        <module name="lambda" />
+        <module name="xml" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="activemq" target="1.6" />
+      <module name="base" target="1.5" />
+      <module name="commons-utils" target="1.5" />
+      <module name="czy-commons-utils" target="1.5" />
+      <module name="json" target="1.5" />
+      <module name="lambda" target="1.5" />
+      <module name="redis" target="1.5" />
+      <module name="xml" target="1.5" />
+      <module name="zookeeper" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
