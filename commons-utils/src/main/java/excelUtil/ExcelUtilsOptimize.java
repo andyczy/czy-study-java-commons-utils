@@ -3,6 +3,7 @@ package com.syiti.bzf.util.support;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.CellRangeAddressList;
 import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
@@ -61,7 +62,8 @@ public class ExcelUtilsOptimize {
      * @return
      */
     @SuppressWarnings({"deprecation", "rawtypes"})
-    public static Boolean exportForExcelOptimize(HttpServletResponse response, List<List<String[]>> exportDataList, String fileName, String[] sheetName, List<List<String[]>> dropDownListData) {
+    public static Boolean exportForExcelOptimize(HttpServletResponse response, List<List<String[]>> exportDataList,
+                                                 String fileName, String[] sheetName, List<List<String[]>> dropDownListData) {
         long startTime = System.currentTimeMillis();
 
         //内存中保留 1000 条数据，以免内存溢出，其余写入硬盘
@@ -165,20 +167,6 @@ public class ExcelUtilsOptimize {
                 Row valueRow = null;
                 Cell valueCell = null;
 
-
-                /**特殊处理逻辑**/
-                //三个sheet单元校验
-                if (!sheet.getSheetName().equals(sheetName[k])) {
-                    System.out.println("-------------------------------  sheet单元校验，单元格命名不规范!  -------------------------------");
-                    return null;
-                }
-                int numberOfSheets = book.getNumberOfSheets();
-                if (numberOfSheets == 0 || numberOfSheets > sheetName.length) {
-                    System.out.println("-------------------------------  sheet单元个数校验!  -------------------------------");
-                    return null;
-                }
-
-
                 List<LinkedHashMap<String, String>> rowListValue = new ArrayList<>();
                 LinkedHashMap<String, String> cellHashMap = null;
                 /**
@@ -205,15 +193,51 @@ public class ExcelUtilsOptimize {
                 newDataList.add(rowListValue);
             }
             long endTime = System.currentTimeMillis();
-            System.out.println("--------------- Excel 工具类导出运行结束时间:  " + endTime + "  ---------------");
+            System.out.println("--------------- Excel 工具类导入运行时间:  " + (endTime - startTime) + "ms ---------------");
             return newDataList;
         } catch (Exception e) {
-            System.out.println("-------------------------------  Excel 工具类导入异常，获取数据为空!  -------------------------------");
             e.printStackTrace();
             return null;
         }
     }
 
+    /**
+     * 功能描述:
+     * 1.excel 合并单元格
+     * 用法说明：
+     * 1.String[] rowColList = new String[]{0, 1, 0, 2}   代表起始行号，终止行号， 起始列号，终止列号
+     *
+     * @param sheet
+     * @param rowColList
+     */
+    public static void setMergedRegion(SXSSFSheet sheet, ArrayList<String[]> rowColList) {
+        if (rowColList != null && rowColList.size() > 0) {
+            for (int i = 0; i < rowColList.size(); i++) {
+                String[] str = (String[]) rowColList.get(i);
+                if (str.length > 0 && str.length == 4) {
+                    Integer firstRow = Integer.parseInt(str[0]);
+                    Integer lastRow = Integer.parseInt(str[1]);
+                    Integer firstCol = Integer.parseInt(str[2]);
+                    Integer lastCol = Integer.parseInt(str[3]);
+                    setMergedRegion(sheet, firstRow, lastRow, firstCol, lastCol);
+                }
+            }
+        }
+    }
+
+    /**
+     * 功能描述:
+     * 1.excel 合并单元格
+     *
+     * @param sheet
+     * @param firstRow 起始行号
+     * @param lastRow  终止行号
+     * @param firstCol 起始列号
+     * @param lastCol  终止列号
+     */
+    public static void setMergedRegion(SXSSFSheet sheet, int firstRow, int lastRow, int firstCol, int lastCol) {
+        sheet.addMergedRegion(new CellRangeAddress(firstRow, lastRow, firstCol, lastCol));
+    }
 
     /**
      * 下拉列表
@@ -226,9 +250,7 @@ public class ExcelUtilsOptimize {
      * @param lastCol    最后一列
      */
     public static void setDataValidation(SXSSFSheet xssfWsheet, String[] list, Integer firstRow, Integer lastRow, Integer firstCol, Integer lastCol) {
-        //下拉列表:开始行，结束行，开始列，介绍列
         DataValidationHelper helper = xssfWsheet.getDataValidationHelper();
-        //设置行列范围：开始行，结束行，开始列，介绍列
         CellRangeAddressList addressList = new CellRangeAddressList(firstRow, lastRow, firstCol, lastCol);
         //如果带双引号超过30个, 打开excel的时候就会提示错误 而且下拉框不生效,
         //如果不带双引号就没有问题(测试心得)
@@ -244,6 +266,30 @@ public class ExcelUtilsOptimize {
             dataValidation.setSuppressDropDownArrow(false);
         }
         xssfWsheet.addValidationData(dataValidation);
+    }
+
+
+    /**
+     * 设置单元格样式
+     *
+     * @param sxssfWrow
+     * @param wb
+     * @param fontSize
+     * @param bold
+     * @param column
+     */
+    public static void setExcelStyle(SXSSFRow sxssfWrow, SXSSFWorkbook wb, Double fontSize, Boolean bold, int column) {
+        CellStyle cellStyle = wb.createCellStyle();
+        sxssfWrow.setHeight((short) (2 * 288));
+        Cell cellRowStyle = sxssfWrow.createCell(column);
+        // 设置单元格字体样式
+        XSSFFont font = (XSSFFont) wb.createFont();
+        font.setBold(bold);
+        font.setFontName("宋体");
+        font.setFontHeight(fontSize == null ? 14 : 16);
+        // 将字体填充到表格中去
+        cellStyle.setFont(font);
+        cellRowStyle.setCellStyle(cellStyle);
     }
 
 
@@ -291,30 +337,6 @@ public class ExcelUtilsOptimize {
             val = "";
         }
         return val;
-    }
-
-
-    /**
-     * 设置单元格样式
-     *
-     * @param sxssfWrow
-     * @param wb
-     * @param fontSize
-     * @param bold
-     * @param column
-     */
-    public static void setExcelStyle(SXSSFRow sxssfWrow, SXSSFWorkbook wb, Double fontSize, Boolean bold, int column) {
-        CellStyle cellStyle = wb.createCellStyle();
-        sxssfWrow.setHeight((short) (2 * 288));
-        Cell cellRowStyle = sxssfWrow.createCell(column);
-        // 设置单元格字体样式
-        XSSFFont font = (XSSFFont) wb.createFont();
-        font.setBold(bold);
-        font.setFontName("宋体");
-        font.setFontHeight(fontSize == null ? 14 : 16);
-        // 将字体填充到表格中去
-        cellStyle.setFont(font);
-        cellRowStyle.setCellStyle(cellStyle);
     }
 
 }
