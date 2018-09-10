@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons-utils/commons-utils.iml" filepath="$PROJECT_DIR$/commons-utils/commons-utils.iml" />
-      <module fileurl="file://D:\codeJava\czy-studey\czy-study-java-commons-utils\czy-commons-utils.iml" filepath="D:\codeJava\czy-studey\czy-study-java-commons-utils\czy-commons-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/czy-study-java-commons-utils.iml" filepath="$PROJECT_DIR$/czy-study-java-commons-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/json/json.iml" filepath="$PROJECT_DIR$/json/json.iml" />
       <module fileurl="file://$PROJECT_DIR$/lambda/lambda.iml" filepath="$PROJECT_DIR$/lambda/lambda.iml" />
