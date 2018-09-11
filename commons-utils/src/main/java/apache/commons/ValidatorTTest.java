@@ -4,6 +4,7 @@ import org.apache.commons.validator.GenericValidator;
 import org.apache.commons.validator.routines.DateValidator;
 import org.apache.commons.validator.routines.DoubleValidator;
 import org.apache.commons.validator.routines.EmailValidator;
+import org.junit.Test;
 
 import java.util.Date;
 
@@ -13,26 +14,29 @@ import java.util.Date;
  * @description:
  */
 public class ValidatorTTest {
-    public static void main(String[] args) {
+
+
+    @Test
+    public void test() {
         // 获取日期验证
         DateValidator validator = DateValidator.getInstance();
         // 验证/转换日期
         Date fooDate = validator.validate("2018/02/18", "yyyy/MM/dd");
         if (fooDate == null) {
             System.out.println("错误 不是日期");
-        }else {
+        } else {
             System.out.println("是日期");
         }
 
         DoubleValidator instance = DoubleValidator.getInstance();
         boolean value = instance.maxValue(3, 2);
-        System.out.println("比较大小"+value);
+        System.out.println("比较大小" + value);
 
         boolean emailValidator = EmailValidator.getInstance().isValid("649954910@qq.com");
-        System.out.println("邮箱验证"+emailValidator);
+        System.out.println("邮箱验证" + emailValidator);
 
 
         boolean email = GenericValidator.isEmail("649954910@qq.com");
-        System.out.println("邮箱验证"+email);
+        System.out.println("邮箱验证" + email);
     }
 }
