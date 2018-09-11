@@ -17,7 +17,7 @@ public class ValidatorTTest {
 
 
     @Test
-    public void test() {
+    public void test () {
         // 获取日期验证
         DateValidator validator = DateValidator.getInstance();
         // 验证/转换日期

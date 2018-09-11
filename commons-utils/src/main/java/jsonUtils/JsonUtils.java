@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @auther 陈郑游
  * @create 2016/3/26 0020
- * @功能   景迈(JingmaiResult)商城分布式系统自定义响应结构
+ * @功能
  * @问题
  * @说明
  * @URL地址
@@ -22,11 +22,10 @@ public class JsonUtils {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
 
-
-
     /**
      * Description：将对象转换成json字符串
-     * @param data  json数据
+     *
+     * @param data json数据
      * @return
      */
     public static String objectToJson(Object data) {
@@ -45,7 +44,7 @@ public class JsonUtils {
      * Description：将json结果集转化为对象
      *
      * @param jsonData json数据
-     * @param clazz 对象中的object类型
+     * @param clazz    对象中的object类型
      * @return
      */
     public static <T> T jsonToPojo(String jsonData, Class<T> beanType) {
@@ -59,14 +58,14 @@ public class JsonUtils {
     }
 
 
-
     /**
      * Description：将json数据转换成pojo对象list
+     *
      * @param jsonData
      * @param beanType
      * @return
      */
-    public static <T>List<T> jsonToList(String jsonData, Class<T> beanType) {
+    public static <T> List<T> jsonToList(String jsonData, Class<T> beanType) {
 
         JavaType javaType = MAPPER.getTypeFactory().constructParametricType(List.class, beanType);
 
@@ -81,5 +80,5 @@ public class JsonUtils {
 
         return null;
     }
-    
+
 }
