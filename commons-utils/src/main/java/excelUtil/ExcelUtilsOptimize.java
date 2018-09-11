@@ -88,16 +88,18 @@ public class ExcelUtilsOptimize {
                 for (String[] listValue : dataList) {
                     int columnIndex = 0;
                     sxssfWrow = xssfWsheet.createRow(JRow);
-                    /**
-                     * 设置标题样式
-                     */
+
                     if (JRow == 0) {
                         setExcelStyle(sxssfWrow, sxssfWbook, null, false, listValue.length);
                     }
+                    /**
+                     * 写入数据
+                     */
                     for (int j = 0; j < listValue.length; j++) {
                         createCell(sxssfWrow, columnIndex, listValue[j]);
                         columnIndex++;
                     }
+
                     JRow++;
                 }
                 /**

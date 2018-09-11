@@ -1,4 +1,4 @@
-package commons_study_test;
+package apache.commons;
 
 import org.apache.commons.collections.BidiMap;
 import org.apache.commons.collections.Factory;
@@ -17,7 +17,7 @@ import java.util.Map;
  * @date 2018-08-31
  * @description:
  */
-public class DemoBidiMap {
+public class CollextionsBidiMap {
 
     public static void main(String[] args) {
         System.out.println(StringUtils.center(" demoBidiMap ",40,"="));

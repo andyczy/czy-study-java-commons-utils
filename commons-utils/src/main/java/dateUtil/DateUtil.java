@@ -1,6 +1,9 @@
 package dateUtil;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.validator.routines.DateValidator;
+import org.apache.commons.validator.routines.DoubleValidator;
+import org.apache.commons.validator.routines.EmailValidator;
 import org.apache.http.util.TextUtils;
 
 import java.sql.Timestamp;
@@ -76,7 +79,7 @@ public class DateUtil {
         if (StringUtils.isBlank(timestampString)) {
             return null;
         }
-        if (TextUtils.isEmpty(formats)){
+        if (TextUtils.isEmpty(formats)) {
             formats = "yyyy-MM-dd HH:mm:ss";
         }
         Long timestamp = null;
@@ -96,7 +99,7 @@ public class DateUtil {
      * @return String
      */
     public static String getCurrentFormatDate(String formats) {
-        if (TextUtils.isEmpty(formats)){
+        if (TextUtils.isEmpty(formats)) {
             formats = "yyyy-MM-dd HH:mm:ss";
         }
         Date date = new Date(System.currentTimeMillis());
@@ -111,7 +114,7 @@ public class DateUtil {
      * @return Timestamp
      */
     public static Timestamp getCurrentTimeStampFormat(String formats) {
-        if (TextUtils.isEmpty(formats)){
+        if (TextUtils.isEmpty(formats)) {
             formats = "yyyy-MM-dd HH:mm:ss";
         }
         Date date = new Date(System.currentTimeMillis());
@@ -193,7 +196,7 @@ public class DateUtil {
      * @return
      */
     public static String formatTime(Timestamp time, String format) {
-        if (TextUtils.isEmpty(format)){
+        if (TextUtils.isEmpty(format)) {
             format = "yyyy-MM-dd HH:mm:ss";
         }
         SimpleDateFormat dateFormat = new SimpleDateFormat(format);
@@ -201,10 +204,26 @@ public class DateUtil {
     }
 
 
+    /**
+     * 判断是否是指定的时间格式
+     *
+     * @param dateStr
+     * @param formatStr
+     * @return
+     */
+    public static Boolean dateStrIsToFormat(String dateStr, String formatStr) {
+        DateValidator validator = DateValidator.getInstance();
+        Date fooDate = validator.validate(dateStr, formatStr);
+        if (fooDate == null) {
+            return false;
+        }
+        return true;
+    }
 
 
     /**
      * 将时间格式字符串转换为时间 yyyy-MM-dd
+     *
      * @param strDate
      * @return
      */

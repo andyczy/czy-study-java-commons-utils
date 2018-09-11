@@ -1,4 +1,4 @@
-package commons_study_test;
+package apache.commons;
 
 import org.apache.commons.codec.binary.Base64;
 

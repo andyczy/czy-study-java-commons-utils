@@ -1,4 +1,4 @@
-package commons_study_test;
+package apache.commons;
 
 import org.apache.commons.collections.Bag;
 import org.apache.commons.collections.BagUtils;
@@ -10,7 +10,7 @@ import org.apache.commons.lang.StringUtils;
  * @date 2018-08-31
  * @description:
  */
-public class BagUsage {
+public class CollectionsBagUsage {
     public static void main(String[] args) {
 
         demoBagUsage();
