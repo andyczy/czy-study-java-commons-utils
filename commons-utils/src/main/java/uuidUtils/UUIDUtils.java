@@ -12,7 +12,7 @@ import java.util.Random;
  * @URL地址  http://blog.csdn.net/javawebrookie/
  * @进度描述
  */
-public class IDUtils {
+public class UUIDUtils {
 
 	/**
      * Description：图片名生成ID

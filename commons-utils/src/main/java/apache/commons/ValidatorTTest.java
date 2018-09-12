@@ -4,6 +4,7 @@ import org.apache.commons.validator.GenericValidator;
 import org.apache.commons.validator.routines.DateValidator;
 import org.apache.commons.validator.routines.DoubleValidator;
 import org.apache.commons.validator.routines.EmailValidator;
+import org.apache.commons.validator.routines.IntegerValidator;
 import org.junit.Test;
 
 import java.util.Date;
@@ -27,6 +28,11 @@ public class ValidatorTTest {
         } else {
             System.out.println("是日期");
         }
+
+        IntegerValidator instance1 = IntegerValidator.getInstance();
+        Integer validate = instance1.validate("ss1");
+        System.out.println("是否是int：" + validate);
+
 
         DoubleValidator instance = DoubleValidator.getInstance();
         boolean value = instance.maxValue(3, 2);

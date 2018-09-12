@@ -1,4 +1,4 @@
-package contactUtil;
+package validatorUtil;
 
 import org.apache.commons.lang.StringUtils;
 
@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * @date 2018-06-22
  * @description: 校验数字
  */
-public class ContactUtil {
+public class ValidatorUtil {
 
 
     private final static Integer MOBILELENGTH = 11;
@@ -92,42 +92,40 @@ public class ContactUtil {
     }
 
     /**
-     * 数字
+     * 是否数字
      *
-     * @param digital
+     * @param str
      * @return
      */
-    public static boolean isDigital(String digital) {
-        String dig = "^-{0,1}\\d*\\.{0,1}\\d+$";
-        boolean success = Pattern.matches(dig, digital);
+    public static boolean isNumber(String str) {
+        Boolean success = false;
+        String re = "^-{0,1}\\d*\\.{0,1}\\d+$";
+        if (StringUtils.isNotBlank(str)) {
+            success = Pattern.matches(re, str);
+        }
         return success;
     }
 
     /**
-     * 身份证正则表达式(15位、18位)、包含x或者大写X
+     * 中国大陆与香港身份证正则表达式(15位、18位)、包含x或者大写X
      *
-     * @param digital
+     * @param str
      * @return
      */
-    public static boolean isSfz(String digital) {
+    public static boolean isIDCard(String str) {
         Boolean success = false;
         //中国大陆
         String nl = "(^\\d{18}$)|(^\\d{15}$)|(^\\d{17}[\\d|x]$)|(^\\d{17}[\\d|X]$)|(^\\d{14}[\\d|X]$)|(^\\d{14}[\\d|x]$)";
         //中国大陆与香港
-        String xg = "([A-Za-z](\\d{6})\\(\\d\\))|(\\d{6})(\\d{4})(\\d{2})(\\d{2})(\\d{3})([0-9]|X|x)";
-
-        if (StringUtils.isNotBlank(digital)) {
-            if (StringUtils.trim(digital).length() == inlandSLENGTH || StringUtils.trim(digital).length() == inlandLENGTH) {
-                success = Pattern.matches(nl, StringUtils.trim(digital));
-            } else {
-                success = Pattern.matches(xg, StringUtils.trim(digital));
-            }
+        String re = "([A-Za-z](\\d{6})\\(\\d\\))|(\\d{6})(\\d{4})(\\d{2})(\\d{2})(\\d{3})([0-9]|X|x)";
+        if (StringUtils.isNotBlank(str)) {
+            success = Pattern.matches(re, StringUtils.trim(str));
         }
         return success;
     }
 
     public static void main(String[] args) {
-        isSfz(" p103678(9)");
+        System.out.println(isIDCard(" p103678(9)"));
     }
 
 }
