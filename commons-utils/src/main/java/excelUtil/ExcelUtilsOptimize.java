@@ -48,7 +48,8 @@ public class ExcelUtilsOptimize {
      * 3.poi官方建议大数据量解决方案：SXSSFWorkbook
      * 4.有下拉列表和校验
      * 5.数据遍历方式换成数组(效率较高)、只修改第一行样式
-     * 6.可提供模板下载和返回值是json(Result对象)
+     * 6.可提供模板下载
+     * 7.添加大标题(表头)
      * <p>
      * 版  本:
      * 1.apache poi 3.17
@@ -59,11 +60,12 @@ public class ExcelUtilsOptimize {
      * @param fileName         文件名称、(可为空：为空就文件名称默认是：excel数据信息表)
      * @param sheetName        sheet 名称、（不可为空）
      * @param dropDownListData 下拉列表要显示的列和对应的值、（可为空：为空就不显示下拉列表数据）
+     * @param labelName        可为空
      * @return
      */
     @SuppressWarnings({"deprecation", "rawtypes"})
     public static Boolean exportForExcelOptimize(HttpServletResponse response, List<List<String[]>> exportDataList,
-                                                 String fileName, String[] sheetName, List<List<String[]>> dropDownListData) {
+                                                 List<List<String[]>> dropDownListData, String fileName, String[] sheetName, String labelName) {
         long startTime = System.currentTimeMillis();
 
         //内存中保留 1000 条数据，以免内存溢出，其余写入硬盘
@@ -81,25 +83,28 @@ public class ExcelUtilsOptimize {
                 SXSSFSheet xssfWsheet = sxssfWbook.createSheet();
                 xssfWsheet.setDefaultColumnWidth((short) 26);
                 sxssfWbook.setSheetName(k, sheetName[k]);
-                /**
-                 * 写入数据:第一行是标题、其他是数据
-                 */
+
+
                 int JRow = 0;
+                //大标题(表头)
+                if (StringUtils.isNotBlank(labelName)) {
+                    sxssfWrow = xssfWsheet.createRow(JRow);
+                    setMergedRegion(xssfWsheet, 0, 0, 0, dataList.get(0).length - 1);
+                    Cell cell = createCell(sxssfWrow, JRow, labelName);
+                    setExcelStyles(cell, sxssfWrow, sxssfWbook, 26, true);
+                    JRow = 1;
+                }
+
+                //写入标题与数据
                 for (String[] listValue : dataList) {
                     int columnIndex = 0;
                     sxssfWrow = xssfWsheet.createRow(JRow);
 
-                    if (JRow == 0) {
-                        setExcelStyle(sxssfWrow, sxssfWbook, null, false, listValue.length);
-                    }
-                    /**
-                     * 写入数据
-                     */
+                    //写入数据
                     for (int j = 0; j < listValue.length; j++) {
-                        createCell(sxssfWrow, columnIndex, listValue[j]);
+                        Cell cell = createCell(sxssfWrow, columnIndex, listValue[j]);
                         columnIndex++;
                     }
-
                     JRow++;
                 }
                 /**
@@ -270,6 +275,32 @@ public class ExcelUtilsOptimize {
         xssfWsheet.addValidationData(dataValidation);
     }
 
+    /**
+     * 设置单元格样式
+     *
+     * @param cell
+     * @param sxssfWrow
+     * @param wb
+     * @param fontSize
+     * @param bold
+     */
+    public static void setExcelStyles(Cell cell, SXSSFRow sxssfWrow, SXSSFWorkbook wb, Integer fontSize, Boolean bold) {
+        CellStyle cellStyle = wb.createCellStyle();
+        //  左右居中
+        cellStyle.setAlignment(HorizontalAlignment.CENTER);
+        //  上下居中
+        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+        sxssfWrow.setHeight((short) (4 * 288));
+
+        // 设置单元格字体样式
+        XSSFFont font = (XSSFFont) wb.createFont();
+        font.setBold(bold);
+        font.setFontName("宋体");
+        font.setFontHeight(fontSize == null ? 14 : 16);
+        // 将字体填充到表格中去
+        cellStyle.setFont(font);
+        cell.setCellStyle(cellStyle);
+    }
 
     /**
      * 设置单元格样式

@@ -77,6 +77,8 @@
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
         </dependency>
+
+
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
@@ -87,6 +89,8 @@
             <artifactId>commons-collections</artifactId>
             <version>3.2.2</version>
         </dependency>
+
+
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -103,6 +107,8 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
