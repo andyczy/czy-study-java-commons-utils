@@ -229,28 +229,27 @@ public class ExcelUtilsOptimize {
     }
 
     /**
-     * 功能描述:
-     * 1.excel 合并单元格
+     * 功能描述: excel 合并单元格
      *
-     * @param sheet
-     * @param firstRow 起始行号
-     * @param lastRow  终止行号
-     * @param firstCol 起始列号
-     * @param lastCol  终止列号
+     * @param sheet      SXSSFSheet对象。
+     * @param firstRow  起始行号。
+     * @param lastRow   终止行号。
+     * @param firstCol  起始列号。
+     * @param lastCol   终止列号。
      */
     public static void setMergedRegion(SXSSFSheet sheet, int firstRow, int lastRow, int firstCol, int lastCol) {
         sheet.addMergedRegion(new CellRangeAddress(firstRow, lastRow, firstCol, lastCol));
     }
 
     /**
-     * 下拉列表
+     * 功能描述:下拉列表
      *
-     * @param xssfWsheet
-     * @param list       下拉数据
-     * @param firstRow   第一行
-     * @param lastRow    最后一行
-     * @param firstCol   第一列
-     * @param lastCol    最后一列
+     * @param xssfWsheet  SXSSFSheet对象。
+     * @param list       下拉数据。
+     * @param firstRow   第一行。
+     * @param lastRow    最后一行。
+     * @param firstCol   第一列。
+     * @param lastCol    最后一列。
      */
     public static void setDataValidation(SXSSFSheet xssfWsheet, String[] list, Integer firstRow, Integer lastRow, Integer firstCol, Integer lastCol) {
         DataValidationHelper helper = xssfWsheet.getDataValidationHelper();
@@ -272,16 +271,16 @@ public class ExcelUtilsOptimize {
     }
 
     /**
-     * 设置单元格样式
+     * 功能描述: 设置单元格样式
      *
-     * @param cell
-     * @param sxssfWrow
-     * @param wb
-     * @param fontSize
-     * @param isheight
-     * @param height
-     * @param bold
-     * @param center
+     * @param cell      Cell对象。
+     * @param sxssfWrow SXSSFRow对象。
+     * @param wb        SXSSFWorkbook对象。
+     * @param fontSize  字体大小。
+     * @param isheight  是否自定义行高。
+     * @param height    行高大小。
+     * @param bold      是否加粗。
+     * @param center    是否左右上下居中。
      */
     public static void setExcelStyles(Cell cell, SXSSFRow sxssfWrow, SXSSFWorkbook wb, Integer fontSize, Boolean isheight, Integer height, Boolean bold, Boolean center) {
         CellStyle cellStyle = wb.createCellStyle();
@@ -307,7 +306,7 @@ public class ExcelUtilsOptimize {
 
 
     /**
-     * 获取Excel单元格中的值并且转换java类型格式
+     * 功能描述: 获取Excel单元格中的值并且转换java类型格式
      *
      * @param cell
      * @return
