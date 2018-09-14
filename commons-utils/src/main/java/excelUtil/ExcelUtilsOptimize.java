@@ -43,23 +43,24 @@ public class ExcelUtilsOptimize {
      * 2.excel 导出模板
      * <p>
      * 更新日志:
-     * 1.response.reset();注释掉reset，否在会出现跨域错误
-     * 2.新增导出多个单元
-     * 3.poi官方建议大数据量解决方案：SXSSFWorkbook
-     * 4.有下拉列表和校验
-     * 5.数据遍历方式换成数组(效率较高)、只修改第一行样式
-     * 6.可提供模板下载
-     * 7.大标签和样式
+     * 1.response.reset();注释掉reset，否在会出现跨域错误。
+     * 2.新增导出多个单元。
+     * 3.poi官方建议大数据量解决方案：SXSSFWorkbook。
+     * 4.有下拉列表和校验。
+     * 5.数据遍历方式换成数组(效率较高)。
+     * 6.可提供模板下载。
+     * 7.大标题和样式。
      * <p>
      * 版  本:
      * 1.apache poi 3.17
+     * 2.apache poi-ooxml  3.17
      *
      * @param response
      * @param exportDataList   导出的数据、(不可为空：如果只有标题就导出模板、则数据导出)
-     * @param fileName         导出文件名称、(可为空：为空就文件名称默认是：excel数据信息表)
-     * @param sheetName         sheet 名称、（不可为空）
+     * @param fileName         文件名称、(可为空：为空就文件名称默认是：excel数据信息表)
+     * @param sheetName        sheet 名称、（不可为空）
      * @param dropDownListData 下拉列表要显示的列和对应的值、（可为空：为空就不显示下拉列表数据）
-     * @param labelName         大标题（可为空）
+     * @param labelName        大标题（可为空）
      * @return
      */
     @SuppressWarnings({"deprecation", "rawtypes"})
@@ -67,71 +68,67 @@ public class ExcelUtilsOptimize {
                                                 List<List<String[]>> dropDownListData,String fileName, String[] sheetName, String labelName) {
         long startTime = System.currentTimeMillis();
 
-        //内存中保留 1000 条数据，以免内存溢出，其余写入硬盘
-        SXSSFWorkbook sxssfWbook = new SXSSFWorkbook(1000);
+        //  内存中保留 1000 条数据，以免内存溢出，其余写入硬盘。
+        SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
         OutputStream outputStream = null;
-        SXSSFRow sxssfWrow = null;
+        SXSSFRow sxssfRow = null;
         try {
             if (exportDataList.size() == 0) {
+                System.out.println("======= 导出数据为空！");
                 return false;
             }
 
-            //sheet单元数
+            //  sheet单元数。
             int k = 0;
             for (List<String[]> dataList : exportDataList) {
-                SXSSFSheet xssfWsheet = sxssfWbook.createSheet();
-                xssfWsheet.setDefaultColumnWidth((short) 26);
-                sxssfWbook.setSheetName(k, sheetName[k]);
+                SXSSFSheet sxssfSheet = sxssfWorkbook.createSheet();
+                sxssfSheet.setDefaultColumnWidth((short) 26);
+                sxssfWorkbook.setSheetName(k, sheetName[k]);
 
 
-                int JRow = 0;
-                //大标题
+                int jRow = 0;
+                //  大标题。
                 if (StringUtils.isNotBlank(labelName)) {
-                    sxssfWrow = xssfWsheet.createRow(JRow);
-                    setMergedRegion(xssfWsheet, 0, 0, 0, dataList.get(0).length - 1);
-                    Cell cell = createCell(sxssfWrow, JRow, labelName);
-                    setExcelStyles(cell, sxssfWrow, sxssfWbook, 26, false, 0, true, true);
-                    JRow = 1;
+                    sxssfRow = sxssfSheet.createRow(jRow);
+                    setMergedRegion(sxssfSheet, 0, 0, 0, dataList.get(0).length - 1);
+                    Cell cell = createCell(sxssfRow, jRow, labelName);
+                    setExcelStyles(cell, sxssfRow, sxssfWorkbook, 26, false, 0, true, true);
+                    jRow = 1;
                 }
-
-                //写入标题（第一行）与数据
+                //   写入标题与数据。
                 for (String[] listValue : dataList) {
                     int columnIndex = 0;
-                    sxssfWrow = xssfWsheet.createRow(JRow);
-                    //写入数据
+                    sxssfRow = sxssfSheet.createRow(jRow);
+                    //   写入标题与数据。
                     for (int j = 0; j < listValue.length; j++) {
-                        Cell cell = createCell(sxssfWrow, columnIndex, listValue[j]);
-                        //标题样式
-                        if (StringUtils.isBlank(labelName) && JRow == 0 || StringUtils.isNotBlank(labelName) && JRow == 1) {
-                            setExcelStyles(cell, sxssfWrow, sxssfWbook, null, false, 0, true, false);
-                        }
+                        Cell cell = createCell(sxssfRow, columnIndex, listValue[j]);
                         columnIndex++;
+                        //  标题样式。
+                        if (StringUtils.isBlank(labelName) && jRow == 0 || StringUtils.isNotBlank(labelName) && jRow == 1) {
+                            setExcelStyles(cell, sxssfRow, sxssfWorkbook, null, false, 0, true, false);
+                        }
                     }
-                    JRow++;
+                    jRow++;
                 }
-                /**
-                 * 下拉列表:开始行，结束行，开始列，结束列
-                 */
+                //  下拉列表:开始行，结束行，开始列，结束列。
                 if (dropDownListData != null) {
                     for (int col = 0; col < dropDownListData.get(k).get(0).length; col++) {
                         Integer colv = Integer.parseInt(dropDownListData.get(k).get(0)[col]);
-                        setDataValidation(xssfWsheet, dropDownListData.get(k).get(col + 1), 1, dataList.size() < 100 ? 500 : dataList.size(), colv, colv);
+                        setDataValidation(sxssfSheet, dropDownListData.get(k).get(col + 1), 1, dataList.size() < 100 ? 500 : dataList.size(), colv, colv);
                     }
                 }
                 k++;
             }
-            /**
-             * 设置响应头信息
-             */
+            //  设置响应头信息。
             response.setHeader("Charset", "UTF-8");
             response.setHeader("Content-Type", "application/force-download");
             response.setHeader("Content-Type", "application/vnd.ms-excel");
             response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? "excel数据信息表" : fileName, "utf8") + ".xlsx");
             response.flushBuffer();
             outputStream = response.getOutputStream();
-            sxssfWbook.write(outputStream);
-            //处理在磁盘上支持此工作簿的临时文件
-            sxssfWbook.dispose();
+            sxssfWorkbook.write(outputStream);
+            //  处理在磁盘上支持此工作簿的临时文件。
+            sxssfWorkbook.dispose();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -144,21 +141,22 @@ public class ExcelUtilsOptimize {
             }
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("--------------- Excel 工具类导出运行时间:  " + (endTime - startTime) + "ms ---------------");
+        System.out.println("======= Excel 工具类导出运行时间:  " + (endTime - startTime) + " ms");
         return true;
     }
 
 
     /**
      * 功能描述:
-     * 1.excel 模板数据导入
+     * 1.excel 模板数据导入。
      * <p>
      * 更新日志:
-     * 1.共用获取Excel表格数据
-     * 2.多单元数据获取
+     * 1.共用获取Excel表格数据。
+     * 2.多单元数据获取。
      * <p>
      * 版  本:
      * 1.apache poi 3.17
+     * 2.apache poi-ooxml  3.17
      *
      * @param book
      * @param sheetName
@@ -168,9 +166,9 @@ public class ExcelUtilsOptimize {
     public static List<List<LinkedHashMap<String, String>>> importForExcelData(Workbook book, String[] sheetName) {
         long startTime = System.currentTimeMillis();
         try {
-            List<List<LinkedHashMap<String, String>>> newDataList = new ArrayList<>();
+            List<List<LinkedHashMap<String, String>>> returnDataList = new ArrayList<>();
             for (int k = 0; k <= sheetName.length - 1; k++) {
-                // 得到第一个工作表对象、得到第一个工作表中的总行数
+                //  得到第一个工作表对象、得到第一个工作表中的总行数。
                 Sheet sheet = book.getSheetAt(k);
                 int rowCount = sheet.getLastRowNum() + 1;
                 Row valueRow = null;
@@ -178,9 +176,8 @@ public class ExcelUtilsOptimize {
 
                 List<LinkedHashMap<String, String>> rowListValue = new ArrayList<>();
                 LinkedHashMap<String, String> cellHashMap = null;
-                /**
-                 * 数据获取:从第二行开始获取
-                 */
+
+                //  数据获取(从第二行开始获取)。
                 for (int i = 1; i < rowCount; i++) {
                     valueRow = sheet.getRow(i);
                     if (valueRow == null) {
@@ -188,10 +185,7 @@ public class ExcelUtilsOptimize {
                     }
                     cellHashMap = new LinkedHashMap<>();
 
-
-                    /**
-                     * 获取列数据
-                     */
+                    //  获取列数据。
                     for (int j = 0; j < valueRow.getLastCellNum(); j++) {
                         cellHashMap.put(Integer.toString(j), getCellVal(valueRow.getCell(j)));
                     }
@@ -199,11 +193,11 @@ public class ExcelUtilsOptimize {
                         rowListValue.add(cellHashMap);
                     }
                 }
-                newDataList.add(rowListValue);
+                returnDataList.add(rowListValue);
             }
             long endTime = System.currentTimeMillis();
-            System.out.println("--------------- Excel 工具类导入运行时间:  " + (endTime - startTime) + "ms ---------------");
-            return newDataList;
+            System.out.println("======= Excel 工具类导入运行时间:  " + (endTime - startTime) + " ms");
+            return returnDataList;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -261,13 +255,13 @@ public class ExcelUtilsOptimize {
     public static void setDataValidation(SXSSFSheet xssfWsheet, String[] list, Integer firstRow, Integer lastRow, Integer firstCol, Integer lastCol) {
         DataValidationHelper helper = xssfWsheet.getDataValidationHelper();
         CellRangeAddressList addressList = new CellRangeAddressList(firstRow, lastRow, firstCol, lastCol);
-        //如果带双引号超过30个, 打开excel的时候就会提示错误 而且下拉框不生效,
-        //如果不带双引号就没有问题(测试心得)
-        //设置下拉框数据
+        //  如果带双引号超过30个, 打开excel的时候就会提示错误 而且下拉框不生效,
+        //  如果不带双引号就没有问题(测试心得)
+        //  设置下拉框数据
         DataValidationConstraint constraint = helper.createExplicitListConstraint(list);
         DataValidation dataValidation = helper.createValidation(constraint, addressList);
         dataValidation.createErrorBox(DataValidationError1, DataValidationError2);
-        //处理Excel兼容性问题
+        //  处理Excel兼容性问题
         if (dataValidation instanceof XSSFDataValidation) {
             dataValidation.setSuppressDropDownArrow(true);
             dataValidation.setShowErrorBox(true);
@@ -310,29 +304,6 @@ public class ExcelUtilsOptimize {
         cell.setCellStyle(cellStyle);
     }
 
-
-    /**
-     * 设置单元格样式
-     *
-     * @param sxssfWrow
-     * @param wb
-     * @param fontSize
-     * @param bold
-     * @param column
-     */
-    public static void setExcelStyle(SXSSFRow sxssfWrow, SXSSFWorkbook wb, Double fontSize, Boolean bold, int column) {
-        CellStyle cellStyle = wb.createCellStyle();
-        sxssfWrow.setHeight((short) (2 * 288));
-        Cell cellRowStyle = sxssfWrow.createCell(column);
-        // 设置单元格字体样式
-        XSSFFont font = (XSSFFont) wb.createFont();
-        font.setBold(bold);
-        font.setFontName("宋体");
-        font.setFontHeight(fontSize == null ? 14 : 16);
-        // 将字体填充到表格中去
-        cellStyle.setFont(font);
-        cellRowStyle.setCellStyle(cellStyle);
-    }
 
 
     /**
