@@ -49,23 +49,22 @@ public class ExcelUtilsOptimize {
      * 4.有下拉列表和校验
      * 5.数据遍历方式换成数组(效率较高)、只修改第一行样式
      * 6.可提供模板下载
-     * 7.添加大标题(表头)
+     * 7.大标签和样式
      * <p>
      * 版  本:
      * 1.apache poi 3.17
-     * 2.excel 导出格式是: xlsx
      *
      * @param response
      * @param exportDataList   导出的数据、(不可为空：如果只有标题就导出模板、则数据导出)
-     * @param fileName         文件名称、(可为空：为空就文件名称默认是：excel数据信息表)
-     * @param sheetName        sheet 名称、（不可为空）
+     * @param fileName         导出文件名称、(可为空：为空就文件名称默认是：excel数据信息表)
+     * @param sheetName         sheet 名称、（不可为空）
      * @param dropDownListData 下拉列表要显示的列和对应的值、（可为空：为空就不显示下拉列表数据）
-     * @param labelName        可为空
+     * @param labelName         大标题（可为空）
      * @return
      */
     @SuppressWarnings({"deprecation", "rawtypes"})
     public static Boolean exportForExcelOptimize(HttpServletResponse response, List<List<String[]>> exportDataList,
-                                                 List<List<String[]>> dropDownListData, String fileName, String[] sheetName, String labelName) {
+                                                List<List<String[]>> dropDownListData,String fileName, String[] sheetName, String labelName) {
         long startTime = System.currentTimeMillis();
 
         //内存中保留 1000 条数据，以免内存溢出，其余写入硬盘
@@ -86,23 +85,26 @@ public class ExcelUtilsOptimize {
 
 
                 int JRow = 0;
-                //大标题(表头)
+                //大标题
                 if (StringUtils.isNotBlank(labelName)) {
                     sxssfWrow = xssfWsheet.createRow(JRow);
                     setMergedRegion(xssfWsheet, 0, 0, 0, dataList.get(0).length - 1);
                     Cell cell = createCell(sxssfWrow, JRow, labelName);
-                    setExcelStyles(cell, sxssfWrow, sxssfWbook, 26, true);
+                    setExcelStyles(cell, sxssfWrow, sxssfWbook, 26, false, 0, true, true);
                     JRow = 1;
                 }
 
-                //写入标题与数据
+                //写入标题（第一行）与数据
                 for (String[] listValue : dataList) {
                     int columnIndex = 0;
                     sxssfWrow = xssfWsheet.createRow(JRow);
-
                     //写入数据
                     for (int j = 0; j < listValue.length; j++) {
                         Cell cell = createCell(sxssfWrow, columnIndex, listValue[j]);
+                        //标题样式
+                        if (StringUtils.isBlank(labelName) && JRow == 0 || StringUtils.isNotBlank(labelName) && JRow == 1) {
+                            setExcelStyles(cell, sxssfWrow, sxssfWbook, null, false, 0, true, false);
+                        }
                         columnIndex++;
                     }
                     JRow++;
@@ -282,25 +284,32 @@ public class ExcelUtilsOptimize {
      * @param sxssfWrow
      * @param wb
      * @param fontSize
+     * @param isheight
+     * @param height
      * @param bold
+     * @param center
      */
-    public static void setExcelStyles(Cell cell, SXSSFRow sxssfWrow, SXSSFWorkbook wb, Integer fontSize, Boolean bold) {
+    public static void setExcelStyles(Cell cell, SXSSFRow sxssfWrow, SXSSFWorkbook wb, Integer fontSize, Boolean isheight, Integer height, Boolean bold, Boolean center) {
         CellStyle cellStyle = wb.createCellStyle();
-        //  左右居中
-        cellStyle.setAlignment(HorizontalAlignment.CENTER);
-        //  上下居中
-        cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
-        sxssfWrow.setHeight((short) (4 * 288));
-
+        if (center) {
+            //  左右居中
+            cellStyle.setAlignment(HorizontalAlignment.CENTER);
+            //  上下居中
+            cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+        }
+        if (isheight) {
+            sxssfWrow.setHeight((short) ((height == null ? 1 : height) * 288));
+        }
         // 设置单元格字体样式
         XSSFFont font = (XSSFFont) wb.createFont();
         font.setBold(bold);
         font.setFontName("宋体");
-        font.setFontHeight(fontSize == null ? 14 : 16);
+        font.setFontHeight(fontSize == null ? 14 : fontSize);
         // 将字体填充到表格中去
         cellStyle.setFont(font);
         cell.setCellStyle(cellStyle);
     }
+
 
     /**
      * 设置单元格样式
