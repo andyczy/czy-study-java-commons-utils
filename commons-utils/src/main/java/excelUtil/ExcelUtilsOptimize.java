@@ -49,7 +49,8 @@ public class ExcelUtilsOptimize {
      * 4.有下拉列表和校验。
      * 5.数据遍历方式换成数组(效率较高)。
      * 6.可提供模板下载。
-     * 7.大标题和样式。
+     * 7.大标题和样式[2018-09-14]
+     * 8.每个单元格自定义列宽[2018-09-18]
      * <p>
      * 版  本:
      * 1.apache poi 3.17
@@ -57,17 +58,17 @@ public class ExcelUtilsOptimize {
      *
      * @param response
      * @param exportDataList   导出的数据、(不可为空：如果只有标题就导出模板、则数据导出)
-     * @param fileName         文件名称、(可为空：为空就文件名称默认是：excel数据信息表)
-     * @param sheetName        sheet 名称、（不可为空）
+     * @param columnHashMap    对每个单元格自定义列宽（可为空）
+     * @param fileName         文件名称(可为空、为空就文件名称默认是：excel数据信息表)
+     * @param sheetName        sheet名称（不可为空）
      * @param dropDownListData 下拉列表要显示的列和对应的值、（可为空：为空就不显示下拉列表数据）
      * @param labelName        大标题（可为空）
      * @return
      */
     @SuppressWarnings({"deprecation", "rawtypes"})
-    public static Boolean exportForExcelOptimize(HttpServletResponse response, List<List<String[]>> exportDataList,
-                                                List<List<String[]>> dropDownListData,String fileName, String[] sheetName, String labelName) {
+    public static Boolean exportForExcelOptimize(HttpServletResponse response, List<List<String[]>> exportDataList, HashMap columnHashMap,
+                                                 List<List<String[]>> dropDownListData, String fileName, String[] sheetName, String labelName) {
         long startTime = System.currentTimeMillis();
-
         //  内存中保留 1000 条数据，以免内存溢出，其余写入硬盘。
         SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
         OutputStream outputStream = null;
@@ -78,7 +79,6 @@ public class ExcelUtilsOptimize {
                 return false;
             }
 
-            //  sheet单元数。
             int k = 0;
             for (List<String[]> dataList : exportDataList) {
                 SXSSFSheet sxssfSheet = sxssfWorkbook.createSheet();
@@ -109,6 +109,10 @@ public class ExcelUtilsOptimize {
                         }
                     }
                     jRow++;
+                }
+                //  对每个单元格自定义列宽
+                if (columnHashMap != null) {
+                    setColumnWidth(sxssfSheet, (Integer[]) columnHashMap.get(k), 5);
                 }
                 //  下拉列表:开始行，结束行，开始列，结束列。
                 if (dropDownListData != null) {
@@ -205,6 +209,21 @@ public class ExcelUtilsOptimize {
     }
 
     /**
+     * 功能描述: 设置列宽
+     *
+     * @param sxssfSheet
+     * @param columnIndex
+     * @param size
+     */
+    public static void setColumnWidth(SXSSFSheet sxssfSheet, Integer[] columnIndex, Integer size) {
+        if (columnIndex.length > 0) {
+            for (int i = 0; i < columnIndex.length; i++) {
+                sxssfSheet.setColumnWidth(columnIndex[i], size * 512);
+            }
+        }
+    }
+
+    /**
      * 功能描述:
      * 1.excel 合并单元格
      * 用法说明：
@@ -231,11 +250,11 @@ public class ExcelUtilsOptimize {
     /**
      * 功能描述: excel 合并单元格
      *
-     * @param sheet      SXSSFSheet对象。
-     * @param firstRow  起始行号。
-     * @param lastRow   终止行号。
-     * @param firstCol  起始列号。
-     * @param lastCol   终止列号。
+     * @param sheet    SXSSFSheet对象。
+     * @param firstRow 起始行号。
+     * @param lastRow  终止行号。
+     * @param firstCol 起始列号。
+     * @param lastCol  终止列号。
      */
     public static void setMergedRegion(SXSSFSheet sheet, int firstRow, int lastRow, int firstCol, int lastCol) {
         sheet.addMergedRegion(new CellRangeAddress(firstRow, lastRow, firstCol, lastCol));
@@ -244,7 +263,7 @@ public class ExcelUtilsOptimize {
     /**
      * 功能描述:下拉列表
      *
-     * @param xssfWsheet  SXSSFSheet对象。
+     * @param xssfWsheet SXSSFSheet对象。
      * @param list       下拉数据。
      * @param firstRow   第一行。
      * @param lastRow    最后一行。
@@ -302,7 +321,6 @@ public class ExcelUtilsOptimize {
         cellStyle.setFont(font);
         cell.setCellStyle(cellStyle);
     }
-
 
 
     /**
