@@ -112,7 +112,7 @@ public class ExcelUtilsOptimize {
                 }
                 //  对每个单元格自定义列宽
                 if (columnHashMap != null) {
-                    setColumnWidth(sxssfSheet, (Integer[]) columnHashMap.get(k), 5);
+                    setColumnWidth(sxssfSheet, (HashMap) columnHashMap.get(k));
                 }
                 //  下拉列表:开始行，结束行，开始列，结束列。
                 if (dropDownListData != null) {
@@ -209,17 +209,23 @@ public class ExcelUtilsOptimize {
     }
 
     /**
-     * 功能描述: 设置列宽
-     *
+     * 功能描述: 自定义列宽
+     * 使用的方法：
+     *  HashMap mapSheet = new HashMap();
+     *  HashMap mapColumn = new HashMap();
+     *  mapColumn.put(0,5);           //第一列，列宽为5
+     *  mapColumn.put(3,5);           //第四列，列宽为5
+     *  mapSheet.put(0, hashMap2);    //第一个元格列宽
      * @param sxssfSheet
-     * @param columnIndex
-     * @param size
+     * @param map
      */
-    public static void setColumnWidth(SXSSFSheet sxssfSheet, Integer[] columnIndex, Integer size) {
-        if (columnIndex.length > 0) {
-            for (int i = 0; i < columnIndex.length; i++) {
-                sxssfSheet.setColumnWidth(columnIndex[i], size * 512);
-            }
+    public static void setColumnWidth(SXSSFSheet sxssfSheet, HashMap map) {
+        Iterator iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            Object key = entry.getKey();
+            Object val = entry.getValue();
+            sxssfSheet.setColumnWidth((int) key, (int) val * 512);
         }
     }
 
