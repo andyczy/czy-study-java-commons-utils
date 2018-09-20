@@ -46,22 +46,22 @@ public class ExcelUtilsOptimize {
      * 1.response.reset();注释掉reset，否在会出现跨域错误。
      * 2.新增导出多个单元。
      * 3.poi官方建议大数据量解决方案：SXSSFWorkbook。
-     * 4.有下拉列表和校验。
+     * 4.自定义下拉列表：对每个单元格自定义下拉列表。
      * 5.数据遍历方式换成数组(效率较高)。
      * 6.可提供模板下载。
      * 7.合并单元格、大标题和样式[2018-09-14]
-     * 8.每个单元格自定义列宽[2018-09-18]
+     * 8.自定义列宽：对每个单元格自定义列宽[2018-09-18]
      * <p>
      * 版  本:
      * 1.apache poi 3.17
      * 2.apache poi-ooxml  3.17
      *
      * @param response
-     * @param exportDataList   导出的数据、(不可为空：如果只有标题就导出模板、则数据导出)
-     * @param columnHashMap    对每个单元格自定义列宽（可为空）
-     * @param fileName         文件名称(可为空、为空就文件名称默认是：excel数据信息表)
+     * @param exportDataList   导出的数据(不可为空：如果只有标题就导出模板)
+     * @param columnHashMap    自定义列宽：对每个单元格自定义列宽（可为空）
+     * @param fileName         文件名称(可为空，为空就文件名称默认是：excel数据信息表)
      * @param sheetName        sheet名称（不可为空）
-     * @param dropDownListData 下拉列表要显示的列和对应的值、（可为空：为空就不显示下拉列表数据）
+     * @param dropDownListData 自定义下拉列表：对每个单元格自定义下拉列表（可为空：为空就不显示下拉列表数据）
      * @param labelName        大标题（可为空）
      * @return
      */
