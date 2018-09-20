@@ -87,7 +87,7 @@ public class ExcelUtilsOptimize {
 
 
                 int jRow = 0;
-                //  大标题。
+                //  大标题和样式。
                 if (StringUtils.isNotBlank(labelName)) {
                     sxssfRow = sxssfSheet.createRow(jRow);
                     setMergedRegion(sxssfSheet, 0, 0, 0, dataList.get(0).length - 1);
@@ -103,7 +103,7 @@ public class ExcelUtilsOptimize {
                     for (int j = 0; j < listValue.length; j++) {
                         Cell cell = createCell(sxssfRow, columnIndex, listValue[j]);
                         columnIndex++;
-                        //  标题样式。
+                        //  数据标题和样式。
                         if (StringUtils.isBlank(labelName) && jRow == 0 || StringUtils.isNotBlank(labelName) && jRow == 1) {
                             setExcelStyles(cell, sxssfRow, sxssfWorkbook, null, false, 0, true, false);
                         }
@@ -114,12 +114,9 @@ public class ExcelUtilsOptimize {
                 if (columnHashMap != null) {
                     setColumnWidth(sxssfSheet, (HashMap) columnHashMap.get(k));
                 }
-                //  下拉列表:开始行，结束行，开始列，结束列。
+                //  下拉列表:开始行，结束行，开始列，结束列
                 if (dropDownListData != null) {
-                    for (int col = 0; col < dropDownListData.get(k).get(0).length; col++) {
-                        Integer colv = Integer.parseInt(dropDownListData.get(k).get(0)[col]);
-                        setDataValidation(sxssfSheet, dropDownListData.get(k).get(col + 1), 1, dataList.size() < 100 ? 500 : dataList.size(), colv, colv);
-                    }
+                    setDataValidation(sxssfSheet, dropDownListData.get(k), dataList);
                 }
                 k++;
             }
@@ -268,6 +265,23 @@ public class ExcelUtilsOptimize {
     public static void setMergedRegion(SXSSFSheet sheet, int firstRow, int lastRow, int firstCol, int lastCol) {
         sheet.addMergedRegion(new CellRangeAddress(firstRow, lastRow, firstCol, lastCol));
     }
+
+
+    /**
+     * 下拉列表
+     * @param xssfWsheet
+     * @param dropDownListData
+     * @param dataList
+     */
+    public static void setDataValidation(SXSSFSheet xssfWsheet, List<String[]> dropDownListData,List<String[]> dataList) {
+        if(dropDownListData.size() > 0){
+            for (int col = 0; col < dropDownListData.get(0).length; col++) {
+                Integer colv = Integer.parseInt(dropDownListData.get(0)[col]);
+                setDataValidation(xssfWsheet, dropDownListData.get(col + 1), 1, dataList.size() < 100 ? 500 : dataList.size(), colv, colv);
+            }
+        }
+    }
+
 
     /**
      * 功能描述:下拉列表
