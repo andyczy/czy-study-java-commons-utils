@@ -211,21 +211,24 @@ public class ExcelUtilsOptimize {
     /**
      * 功能描述: 自定义列宽
      * 使用的方法：
-     *  HashMap mapSheet = new HashMap();
-     *  HashMap mapColumn = new HashMap();
-     *  mapColumn.put(0,5);           //第一列，列宽为5
-     *  mapColumn.put(3,5);           //第四列，列宽为5
-     *  mapSheet.put(0, hashMap2);    //第一个元格列宽
+     * HashMap<Integer,HashMap<Integer,Integer>>  mapSheet = new HashMap();
+     * HashMap<Integer,Integer> mapColumn = new HashMap();
+     * mapColumn.put(0,5);           //第一列，列宽为5
+     * mapColumn.put(3,5);           //第四列，列宽为5
+     * mapSheet.put(0, hashMap2);    //第一个元格列宽
+     *
      * @param sxssfSheet
      * @param map
      */
     public static void setColumnWidth(SXSSFSheet sxssfSheet, HashMap map) {
-        Iterator iterator = map.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Map.Entry entry = (Map.Entry) iterator.next();
-            Object key = entry.getKey();
-            Object val = entry.getValue();
-            sxssfSheet.setColumnWidth((int) key, (int) val * 512);
+        if (map != null) {
+            Iterator iterator = map.entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry entry = (Map.Entry) iterator.next();
+                Object key = entry.getKey();
+                Object val = entry.getValue();
+                sxssfSheet.setColumnWidth((int) key, (int) val * 512);
+            }
         }
     }
 
