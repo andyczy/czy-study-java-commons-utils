@@ -160,9 +160,9 @@ public class ExcelUtilsOptimize {
      * 1.apache poi 3.17
      * 2.apache poi-ooxml  3.17
      *
-     * @param book          Workbook对象（不可为空）
-     * @param sheetName     多单元数据获取（不可为空）
-     * @param index         从第几行开始获取数据，默认从第二行开始获取（可为空）
+     * @param book      Workbook对象（不可为空）
+     * @param sheetName 多单元数据获取（不可为空）
+     * @param index     从第几行开始获取数据，默认从第二行开始获取（可为空，填 3 则从第三行开始获取）
      * @return
      */
     @SuppressWarnings({"deprecation", "rawtypes"})
@@ -183,10 +183,10 @@ public class ExcelUtilsOptimize {
                 int irow = 1;
                 //  默认从第二行开始获取。
                 if (index != null) {
-                    irow = index;
+                    irow = index - 1;
                 }
                 //  数据获取。
-                for (int i = irow; i < rowCount; i++) {
+                for (int i = irow <= 0 ? 1 : irow; i < rowCount; i++) {
                     valueRow = sheet.getRow(i);
                     if (valueRow == null) {
                         continue;
