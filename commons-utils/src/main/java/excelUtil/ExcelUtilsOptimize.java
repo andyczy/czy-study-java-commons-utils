@@ -154,22 +154,24 @@ public class ExcelUtilsOptimize {
      * 更新日志:
      * 1.共用获取Excel表格数据。
      * 2.多单元数据获取。
+     * 3.从第几行开始获取数据[2018-09-20]
      * <p>
      * 版  本:
      * 1.apache poi 3.17
      * 2.apache poi-ooxml  3.17
      *
-     * @param book
-     * @param sheetName
+     * @param book          Workbook对象（不可为空）
+     * @param sheetName     多单元数据获取（不可为空）
+     * @param index         从第几行开始获取数据，默认从第二行开始获取（可为空）
      * @return
      */
     @SuppressWarnings({"deprecation", "rawtypes"})
-    public static List<List<LinkedHashMap<String, String>>> importForExcelData(Workbook book, String[] sheetName) {
+    public static List<List<LinkedHashMap<String, String>>> importForExcelData(Workbook book, String[] sheetName, Integer index) {
         long startTime = System.currentTimeMillis();
         try {
             List<List<LinkedHashMap<String, String>>> returnDataList = new ArrayList<>();
             for (int k = 0; k <= sheetName.length - 1; k++) {
-                //  得到第一个工作表对象、得到第一个工作表中的总行数。
+                //  得到第K个工作表对象、得到第K个工作表中的总行数。
                 Sheet sheet = book.getSheetAt(k);
                 int rowCount = sheet.getLastRowNum() + 1;
                 Row valueRow = null;
@@ -178,8 +180,13 @@ public class ExcelUtilsOptimize {
                 List<LinkedHashMap<String, String>> rowListValue = new ArrayList<>();
                 LinkedHashMap<String, String> cellHashMap = null;
 
-                //  数据获取(从第二行开始获取)。
-                for (int i = 1; i < rowCount; i++) {
+                int irow = 1;
+                //  默认从第二行开始获取。
+                if (index != null) {
+                    irow = index;
+                }
+                //  数据获取。
+                for (int i = irow; i < rowCount; i++) {
                     valueRow = sheet.getRow(i);
                     if (valueRow == null) {
                         continue;
@@ -269,12 +276,13 @@ public class ExcelUtilsOptimize {
 
     /**
      * 下拉列表
+     *
      * @param xssfWsheet
      * @param dropDownListData
      * @param dataList
      */
-    public static void setDataValidation(SXSSFSheet xssfWsheet, List<String[]> dropDownListData,List<String[]> dataList) {
-        if(dropDownListData.size() > 0){
+    public static void setDataValidation(SXSSFSheet xssfWsheet, List<String[]> dropDownListData, List<String[]> dataList) {
+        if (dropDownListData.size() > 0) {
             for (int col = 0; col < dropDownListData.get(0).length; col++) {
                 Integer colv = Integer.parseInt(dropDownListData.get(0)[col]);
                 setDataValidation(xssfWsheet, dropDownListData.get(col + 1), 1, dataList.size() < 100 ? 500 : dataList.size(), colv, colv);
