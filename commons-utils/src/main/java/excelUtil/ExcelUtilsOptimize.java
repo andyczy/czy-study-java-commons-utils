@@ -1,3 +1,4 @@
+package com.syiti.vbp.util.support;
 
 
 import org.apache.commons.lang.StringUtils;
@@ -76,25 +77,24 @@ public class ExcelUtils {
                                          HashMap regionMap, HashMap columnMap, HashMap cellStyles, HashMap paneMap, String fileName,
                                          String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles) {
         long startTime = System.currentTimeMillis();
-        //  内存中保留 1000 条数据，以免内存溢出，其余写入硬盘。
-        SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
+        //  内存中保留 10000 条数据，以免内存溢出，其余写入硬盘。
+        SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(10000);
         OutputStream outputStream = null;
         SXSSFRow sxssfRow = null;
         try {
-            if (dataLists.size() == 0) {
-                System.out.println("======= 导出数据为空！");
-                return false;
-            }
-
+//            if (dataLists.size() == 0) {
+//                System.out.println("======= 导出数据为空！");
+//                return false;
+//            }
             int k = 0;
             for (List<String[]> lits : dataLists) {
                 SXSSFSheet sxssfSheet = sxssfWorkbook.createSheet();
-                sxssfSheet.setDefaultColumnWidth((short) 10);
+                sxssfSheet.setDefaultColumnWidth((short) 16);
                 sxssfWorkbook.setSheetName(k, sheetName[k]);
 
                 int jRow = 0;
                 //  大标题和样式。参数说明：new String[]{"表格数据一", "表格数据二", "表格数据三"}
-                if (labelName != null && labelName.length - 1 >= k) {
+                if (labelName != null) {
                     sxssfRow = sxssfSheet.createRow(jRow);
                     Cell cell = createCell(sxssfRow, jRow, labelName[k]);
                     setMergedRegion(sxssfSheet, 0, 0, 0, lits.get(0).length - 1);
@@ -102,19 +102,19 @@ public class ExcelUtils {
                     jRow = 1;
                 }
                 //  每个单元格自定义合并单元格：对每个单元格自定义合并单元格（看该方法说明）。
-                if (regionMap != null && regionMap.size() > 0) {
+                if (regionMap != null) {
                     setMergedRegion(sxssfSheet, (ArrayList<Integer[]>) regionMap.get(k + 1));
                 }
                 //  每个单元格自定义下拉列表：对每个单元格自定义下拉列表（看该方法说明）。
-                if (dropDownData != null && dropDownData.size() > 0) {
+                if (dropDownData != null) {
                     setDataValidation(sxssfSheet, dropDownData.get(k), lits);
                 }
                 //  每个表格自定义列宽：对每个单元格自定义列宽（看该方法说明）。
-                if (columnMap != null && columnMap.size() > 0) {
+                if (columnMap != null) {
                     setColumnWidth(sxssfSheet, (HashMap) columnMap.get(k + 1));
                 }
                 //  每个表格固定表头（看该方法说明）。
-                if (paneMap != null && paneMap.size() > 0 && paneMap.size() - 1 >= k) {
+                if (paneMap != null && paneMap.size() - 1 >= k) {
                     createFreezePane(sxssfSheet, (Integer) paneMap.get(k + 1));
                 }
 
@@ -124,26 +124,24 @@ public class ExcelUtils {
                     sxssfRow = sxssfSheet.createRow(jRow);
                     //  写入标题与数据。
                     for (int j = 0; j < listValue.length; j++) {
+                        Cell cells = sxssfRow.createCell(j);
                         Cell cell = createCell(sxssfRow, columnIndex, listValue[j]);
                         columnIndex++;
                         //  所有单元个样式。
                         setExcelStyles(cell, sxssfWorkbook, null, null, true, true, false, false, null);
                         //  每个表格每一列的样式（看该方法说明）。
-                        if (columnStyles != null && columnStyles.size() > 0) {
-                            if (labelName != null && jRow > 1) {
-                                setExcelCellStyles(cell, sxssfWorkbook, (List) columnStyles.get(k + 1), j);
-                            }
-                            if (labelName == null && jRow > 0) {
-                                setExcelCellStyles(cell, sxssfWorkbook, (List) columnStyles.get(k + 1), j);
-                            }
+                        if (columnStyles != null && labelName != null && jRow > 1) {
+                            setExcelCellStyles(cell, sxssfWorkbook, (List) columnStyles.get(k + 1), j);
+                        }
+                        if (columnStyles != null && labelName == null && jRow > 0) {
+                            setExcelCellStyles(cell, sxssfWorkbook, (List) columnStyles.get(k + 1), j);
                         }
                         //  每个表格每一行的样式（看该方法说明）。
-                        if (rowStyles != null && rowStyles.size() > 0) {
+                        if (rowStyles != null) {
                             setExcelCellStyles(cell, sxssfWorkbook, (List) rowStyles.get(k + 1), jRow);
                         }
                         //  每个单元格自定义单元格样式（看该方法说明）。
-                        if (cellStyles != null && cellStyles.size() > 0) {
-                            Cell cells = sxssfRow.createCell(j);
+                        if (cellStyles != null) {
                             setExcelStyles(cells, sxssfWorkbook, (List<List<Object[]>>) cellStyles.get(k + 1), j, jRow);
                         }
                     }
@@ -469,7 +467,7 @@ public class ExcelUtils {
                     if (rowstyleList.size() >= 3) {
                         int leng = rowstyleList.get(2).length;
                         fontColor = (Integer) rowstyleList.get(2)[0];
-                        if (leng >=2) {
+                        if (leng >= 2) {
                             fontSize = (Integer) rowstyleList.get(2)[1];
                         }
                     }
@@ -482,41 +480,48 @@ public class ExcelUtils {
     /**
      * @param cell
      * @param wb
-     * @param zstyle 是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？
-     *               HashMap setStylesMap = new HashMap();
-     *               List<List<Object[]>> zstyle = new ArrayList<>();
+     * @param styles 是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？  —— 颜色、字体
+     *               HashMap cellStyles = new HashMap();
+     *               List< List<Object[]>> list = new ArrayList<>();
      *               List<Object[]> objectsList = new ArrayList<>();
-     *               Boolean[] styles = new Boolean[]{true, false, false, true, true};  //样式一（必须放第一）
-     *               objectsList.add(styles);            　　　　　　　　　　　　          //设置样式的行列
-     *               objectsList.add(new Integer[]{5, 1});                              //第五　　行第一列
-     *               <p>
      *               List<Object[]> objectsListTwo = new ArrayList<>();
-     *               Boolean[] stylesTwo = new Boolean[]{false, false, true, true, true}; //样式二（必须放第一）
-     *               objectsListTwo.add(stylesTwo);                                       //设置样式的行列
-     *               objectsListTwo.add(new Integer[]{3, 1});                             //第三　　行第一列
+     *               objectsList.add(new Boolean[]{true, false, false, false, true});      //1、样式一（必须放第一）
+     *               objectsList.add(new Integer[]{10, 12});                               //1、颜色和字体
+     *               <p>
+     *               objectsListTwo.add(new Boolean[]{false, false, false, true, true});   //2、样式二（必须放第一）
+     *               objectsListTwo.add(new Integer[]{10, 12});                            //2、颜色和字体
+     *               <p>
+     *               objectsList.add(new Integer[]{5, 1});                                 //1、第五行第一列
+     *               objectsList.add(new Integer[]{6, 1});                                 //1、第六行第一列
+     *               <p>
+     *               objectsListTwo.add(new Integer[]{2, 1});                              //2、第二行第一列
+     *               <p>
+     *               cellStyles.put(1, list);                                              //第一个表格所有自定义单元格样式
      */
-    public static void setExcelStyles(Cell cell, SXSSFWorkbook wb, List<List<Object[]>> zstyle, int cellIndex, int rowIndex) {
-        if (zstyle != null) {
-            for (int z = 0; z < zstyle.size(); z++) {
-                List<Object[]> stylesList = zstyle.get(z);
+    public static void setExcelStyles(Cell cell, SXSSFWorkbook wb, List<List<Object[]>> styles, int cellIndex, int rowIndex) {
+        if (styles != null) {
+            for (int z = 0; z < styles.size(); z++) {
+                List<Object[]> stylesList = styles.get(z);
                 if (stylesList != null) {
-                    for (int m = 0; m < stylesList.size() - 1; m++) {
+                    //颜色和字体
+                    Integer[] fontColor = (Integer[]) stylesList.get(1);
+                    //样式
+                    Boolean[] bool = (Boolean[]) stylesList.get(0);
+                    //左右居中、上下居中
+                    Boolean centerBoolean = Boolean.valueOf(bool[0]);
+                    //右对齐
+                    Boolean rightBoolean = Boolean.valueOf(bool[1]);
+                    //左对齐
+                    Boolean leftBoolean = Boolean.valueOf(bool[2]);
+                    //加粗
+                    Boolean boldBoolean = Boolean.valueOf(bool[3]);
+                    //边框
+                    Boolean isSetBorder = Boolean.valueOf(bool[4]);
+                    for (int m = 2; m < stylesList.size(); m++) {
                         //第几行第几列
-                        Integer[] str = (Integer[]) stylesList.get(m + 1);
-                        //样式
-                        Boolean[] bool = (Boolean[]) stylesList.get(0);
+                        Integer[] str = (Integer[]) stylesList.get(m);
                         if (cellIndex + 1 == (str[1]) && rowIndex + 1 == (str[0])) {
-                            //左右居中、上下居中
-                            Boolean centerBoolean = Boolean.valueOf(bool[0]);
-                            //右对齐
-                            Boolean rightBoolean = Boolean.valueOf(bool[1]);
-                            //左对齐
-                            Boolean leftBoolean = Boolean.valueOf(bool[2]);
-                            //加粗
-                            Boolean boldBoolean = Boolean.valueOf(bool[3]);
-                            //边框
-                            Boolean isSetBorder = Boolean.valueOf(bool[4]);
-                            setExcelStyles(cell, wb, null, boldBoolean, centerBoolean, isSetBorder, leftBoolean, rightBoolean, null);
+                            setExcelStyles(cell, wb, fontColor[1], boldBoolean, centerBoolean, isSetBorder, leftBoolean, rightBoolean, fontColor[0]);
                         }
                     }
                 }
