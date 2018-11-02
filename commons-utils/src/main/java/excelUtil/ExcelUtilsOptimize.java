@@ -82,10 +82,7 @@ public class ExcelUtils {
         OutputStream outputStream = null;
         SXSSFRow sxssfRow = null;
         try {
-//            if (dataLists.size() == 0) {
-//                System.out.println("======= 导出数据为空！");
-//                return false;
-//            }
+ 
             int k = 0;
             for (List<String[]> lits : dataLists) {
                 SXSSFSheet sxssfSheet = sxssfWorkbook.createSheet();
