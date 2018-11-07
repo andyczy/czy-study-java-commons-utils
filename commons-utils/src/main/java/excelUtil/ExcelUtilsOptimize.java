@@ -1,7 +1,6 @@
 package com.syiti.vbp.util.support;
 
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.CellRangeAddressList;
@@ -29,13 +28,35 @@ public class ExcelUtils {
 
 
     /**
-     * 日期格式yyyy-mm-dd
-     * 数字格式，防止长数字成为科学计数法形式，或者int变为double形式
+     * 更新日志：
+     * 1.解决 SimpleDateFormat 与 DecimalFormat 线程安全问题。
+     *
      */
-    private static final SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
-    private static final DecimalFormat df = new DecimalFormat("#.###");
+    private static final ThreadLocal<SimpleDateFormat> fmt = new ThreadLocal<>();
+    private static final String MESSAGE_FORMAT = "yyyy-MM-dd";
+
+    private static final ThreadLocal<DecimalFormat> df = new ThreadLocal<>();
+    private static final String MESSAGE_FORMAT_df = "#.###";
     private static final String DataValidationError1 = "本系统——提醒您！";
     private static final String DataValidationError2 = "数据不规范，请选择表格列表中的数据！";
+
+    private static final SimpleDateFormat getDateFormat() {
+        SimpleDateFormat format = fmt.get();
+        if (format == null) {
+            format = new SimpleDateFormat(MESSAGE_FORMAT, Locale.getDefault());
+            fmt.set(format);
+        }
+        return format;
+    }
+    private static final DecimalFormat getDecimalFormat() {
+        DecimalFormat format = df.get();
+        if (format == null) {
+            format = new DecimalFormat(MESSAGE_FORMAT_df);
+            df.set(format);
+        }
+        return format;
+    }
+
 
 
     /**
@@ -62,84 +83,82 @@ public class ExcelUtils {
      * @param response
      * @param dataLists    导出的数据(不可为空：如果只有标题就导出模板)
      * @param sheetName    sheet名称（不可为空）
-     * @param columnMap    自定义：自定义列宽：对每个单元格自定义列宽（可为空）
-     * @param dataLists    自定义：自定义下拉列表：对每个单元格自定义下拉列表（可为空）
-     * @param cellStyles   自定义：自定义每一个单元格样式（可为空）
-     * @param rowStyles    自定义：自定义某一行样式（可为空）
-     * @param columnStyles 自定义：自定义某一列样式（可为空）
-     * @param regionMap    自定义：自定义单元格合并（可为空）
+     * @param columnMap    自定义：对每个单元格自定义列宽（可为空）
+     * @param dropDownMap  自定义：对每个单元格自定义下拉列表（可为空）
+     * @param styles       自定义：每一个单元格样式（可为空）
+     * @param rowStyles    自定义：某一行样式（可为空）
+     * @param columnStyles 自定义：某一列样式（可为空）
+     * @param regionMap    自定义：单元格合并（可为空）
      * @param paneMap      固定表头（可为空）
      * @param labelName    每个表格的大标题（可为空）
      * @param fileName     文件名称(可为空，默认是：Excel数据信息表)
      * @return
      */
-    public static Boolean exportForExcel(HttpServletResponse response, List<List<String[]>> dataLists, List<List<String[]>> dropDownData,
-                                         HashMap regionMap, HashMap columnMap, HashMap cellStyles, HashMap paneMap, String fileName,
+    public static Boolean exportForExcel(HttpServletResponse response, List<List<String[]>> dataLists, HashMap dropDownMap,
+                                         HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap, String fileName,
                                          String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles) {
         long startTime = System.currentTimeMillis();
-        //  内存中保留 10000 条数据，以免内存溢出，其余写入硬盘。
-        SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(10000);
+        //  内存中保留 1000 条数据，以免内存溢出，其余写入硬盘。
+        SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
         OutputStream outputStream = null;
         SXSSFRow sxssfRow = null;
         try {
- 
             int k = 0;
-            for (List<String[]> lits : dataLists) {
+            for (List<String[]> list : dataLists) {
                 SXSSFSheet sxssfSheet = sxssfWorkbook.createSheet();
                 sxssfSheet.setDefaultColumnWidth((short) 16);
                 sxssfWorkbook.setSheetName(k, sheetName[k]);
 
                 int jRow = 0;
-                //  大标题和样式。参数说明：new String[]{"表格数据一", "表格数据二", "表格数据三"}
+                //  自定义：大标题和样式。参数说明：new String[]{"表格数据一", "表格数据二", "表格数据三"}
                 if (labelName != null) {
                     sxssfRow = sxssfSheet.createRow(jRow);
                     Cell cell = createCell(sxssfRow, jRow, labelName[k]);
-                    setMergedRegion(sxssfSheet, 0, 0, 0, lits.get(0).length - 1);
+                    setMergedRegion(sxssfSheet, 0, 0, 0, list.get(0).length - 1);
                     setExcelStyles(cell, sxssfWorkbook, 18, true, true, false, false, false, null);
                     jRow = 1;
                 }
-                //  每个单元格自定义合并单元格：对每个单元格自定义合并单元格（看该方法说明）。
+                //  自定义：每个单元格自定义合并单元格：对每个单元格自定义合并单元格（看该方法说明）。
                 if (regionMap != null) {
                     setMergedRegion(sxssfSheet, (ArrayList<Integer[]>) regionMap.get(k + 1));
                 }
-                //  每个单元格自定义下拉列表：对每个单元格自定义下拉列表（看该方法说明）。
-                if (dropDownData != null) {
-                    setDataValidation(sxssfSheet, dropDownData.get(k), lits);
+                //  自定义：每个单元格自定义下拉列表：对每个单元格自定义下拉列表（看该方法说明）。
+                if (dropDownMap != null) {
+                    setDataValidation(sxssfSheet, (List<String[]>) dropDownMap.get(k + 1), list.size());
                 }
-                //  每个表格自定义列宽：对每个单元格自定义列宽（看该方法说明）。
+                //  自定义：每个表格自定义列宽：对每个单元格自定义列宽（看该方法说明）。
                 if (columnMap != null) {
                     setColumnWidth(sxssfSheet, (HashMap) columnMap.get(k + 1));
                 }
-                //  每个表格固定表头（看该方法说明）。
-                if (paneMap != null && paneMap.size() - 1 >= k) {
+                //  自定义：每个表格固定表头（看该方法说明）。
+                if (paneMap != null) {
                     createFreezePane(sxssfSheet, (Integer) paneMap.get(k + 1));
                 }
 
                 //  写入标题与数据。
-                for (String[] listValue : lits) {
+                for (String[] listValue : list) {
                     int columnIndex = 0;
                     sxssfRow = sxssfSheet.createRow(jRow);
-                    //  写入标题与数据。
                     for (int j = 0; j < listValue.length; j++) {
                         Cell cells = sxssfRow.createCell(j);
                         Cell cell = createCell(sxssfRow, columnIndex, listValue[j]);
                         columnIndex++;
-                        //  所有单元个样式。
+                        //  所有单元格默认样式。
                         setExcelStyles(cell, sxssfWorkbook, null, null, true, true, false, false, null);
-                        //  每个表格每一列的样式（看该方法说明）。
+                        //  自定义：每个表格每一列的样式（看该方法说明）。
                         if (columnStyles != null && labelName != null && jRow > 1) {
                             setExcelCellStyles(cell, sxssfWorkbook, (List) columnStyles.get(k + 1), j);
                         }
                         if (columnStyles != null && labelName == null && jRow > 0) {
                             setExcelCellStyles(cell, sxssfWorkbook, (List) columnStyles.get(k + 1), j);
                         }
-                        //  每个表格每一行的样式（看该方法说明）。
+                        //  自定义：每个表格每一行的样式（看该方法说明）。
                         if (rowStyles != null) {
                             setExcelCellStyles(cell, sxssfWorkbook, (List) rowStyles.get(k + 1), jRow);
                         }
-                        //  每个单元格自定义单元格样式（看该方法说明）。
-                        if (cellStyles != null) {
-                            setExcelStyles(cells, sxssfWorkbook, (List<List<Object[]>>) cellStyles.get(k + 1), j, jRow);
+                        //  自定义：每一个单元格样式（看该方法说明）。
+                        if (styles != null) {
+                            setExcelStyles(cells, sxssfWorkbook, (List<List<Object[]>>) styles.get(k + 1), j, jRow);
                         }
                     }
                     jRow++;
@@ -148,8 +167,8 @@ public class ExcelUtils {
             }
             //  设置响应头信息。
             response.setHeader("Charset", "UTF-8");
-//            response.setHeader("Content-Type", "application/force-download");
-//            response.setHeader("Content-Type", "application/vnd.ms-excel");
+            response.setHeader("Content-Type", "application/force-download");
+            response.setHeader("Content-Type", "application/vnd.ms-excel");
             response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? "Excel数据信息表" : fileName, "utf8") + ".xlsx");
             response.flushBuffer();
             outputStream = response.getOutputStream();
@@ -188,12 +207,12 @@ public class ExcelUtils {
      *
      * @param book           Workbook对象（不可为空）
      * @param sheetName      多单元数据获取（不可为空）
-     * @param hashMapIndex   多单元从第几行开始获取数据，默认从第二行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
-     * @param mapContinueRow 多单元根据那些列为空来忽略行数据（可为空，如 mapContinueRow.put(1,new Integer[]{1, 3}); 第一个表格从1、3列为空就忽略）
+     * @param indexMap       多单元从第几行开始获取数据，默认从第二行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
+     * @param continueRowMap 多单元根据那些列为空来忽略行数据（可为空，如 mapContinueRow.put(1,new Integer[]{1, 3}); 第一个表格从1、3列为空就忽略）
      * @return
      */
     @SuppressWarnings({"deprecation", "rawtypes"})
-    public static List<List<LinkedHashMap<String, String>>> importForExcelData(Workbook book, String[] sheetName, HashMap hashMapIndex, HashMap mapContinueRow) {
+    public static List<List<LinkedHashMap<String, String>>> importForExcelData(Workbook book, String[] sheetName, HashMap indexMap, HashMap continueRowMap) {
         long startTime = System.currentTimeMillis();
         try {
             List<List<LinkedHashMap<String, String>>> returnDataList = new ArrayList<>();
@@ -208,8 +227,8 @@ public class ExcelUtils {
 
                 int irow = 1;
                 //  第n个工作表:从开始获取数据、默认第二行开始获取。
-                if (hashMapIndex != null && StringUtils.isNotBlank(hashMapIndex.get(k + 1).toString())) {
-                    irow = Integer.valueOf(hashMapIndex.get(k + 1).toString()) - 1;
+                if (indexMap != null && indexMap.get(k + 1) != null) {
+                    irow = Integer.valueOf(indexMap.get(k + 1).toString()) - 1;
                 }
                 //  第n个工作表:数据获取。
                 for (int i = irow <= 0 ? 1 : irow; i < rowCount; i++) {
@@ -219,12 +238,12 @@ public class ExcelUtils {
                     }
 
                     //  第n个工作表:从开始列忽略数据、为空就跳过。
-                    if (mapContinueRow != null && StringUtils.isNotBlank(mapContinueRow.get(k + 1).toString())) {
+                    if (continueRowMap != null && continueRowMap.get(k + 1) != null) {
                         int continueRowCount = 0;
-                        Integer[] continueRow = (Integer[]) mapContinueRow.get(k + 1);
+                        Integer[] continueRow = (Integer[]) continueRowMap.get(k + 1);
                         for (int w = 0; w <= continueRow.length - 1; w++) {
                             Cell valueRowCell = valueRow.getCell(continueRow[w] - 1);
-                            if (valueRowCell == null || StringUtils.isBlank(valueRowCell.toString())) {
+                            if (valueRowCell == null || isBlank(valueRowCell.toString())) {
                                 continueRowCount = continueRowCount + 1;
                             }
                         }
@@ -245,13 +264,33 @@ public class ExcelUtils {
                 }
                 returnDataList.add(rowListValue);
             }
-            long endTime = System.currentTimeMillis();
-            System.out.println("======= Excel 工具类导入运行时间:  " + (endTime - startTime) + " ms");
+            System.out.println("======= Excel 工具类导入运行时间:  " + (System.currentTimeMillis() - startTime) + " ms");
             return returnDataList;
         } catch (Exception e) {
             System.out.println("======= Excel 工具类导入异常");
             e.printStackTrace();
             return null;
+        }
+    }
+
+
+    /**
+     * 判断字符串是否为空
+     * 源码：只是为了该类不引入其他 jar 包
+     * @param str
+     * @return
+     */
+    public static boolean isBlank(String str) {
+        int strLen;
+        if (str != null && (strLen = str.length()) != 0) {
+            for(int i = 0; i < strLen; ++i) {
+                if (!Character.isWhitespace(str.charAt(i))) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return true;
         }
     }
 
@@ -338,21 +377,22 @@ public class ExcelUtils {
     /**
      * 功能描述:下拉列表
      *
-     * @param xssfWsheet
+     * @param sheet
      * @param dropDownListData
-     * @param dataList         参数说明：
-     *                         List<List<String[]>> dropDownListData = new ArrayList<>();
+     * @param dataListSize     参数说明：
+     *                         HashMap hashMap = new HashMap();
      *                         List<String[]> sheet1 = new ArrayList<>();                  //第一个表格设置。
      *                         String[] sheetColumn1 = new String[]{"1", "2", "4"};        //必须放第一：设置下拉列表的列（excel从零行开始数）
      *                         String[] sex = {"男,女"};                                   //下拉的值放在 sheetColumn1 后面。
+     *                         sheet1.add(sheetColumn1);
      *                         sheet1.add(sex);
-     *                         dropDownListData.add(sheet1);
+     *                         hashMap.put(1,sheet1);                                      //第一个表格的下拉列表值
      */
-    public static void setDataValidation(SXSSFSheet xssfWsheet, List<String[]> dropDownListData, List<String[]> dataList) {
+    public static void setDataValidation(SXSSFSheet sheet, List<String[]> dropDownListData, int dataListSize) {
         if (dropDownListData.size() > 0) {
             for (int col = 0; col < dropDownListData.get(0).length; col++) {
                 Integer colv = Integer.parseInt(dropDownListData.get(0)[col]);
-                setDataValidation(xssfWsheet, dropDownListData.get(col + 1), 1, dataList.size() < 100 ? 500 : dataList.size(), colv, colv);
+                setDataValidation(sheet, dropDownListData.get(col + 1), 1, dataListSize < 100 ? 500 : dataListSize, colv, colv);
             }
         }
     }
@@ -556,9 +596,9 @@ public class ExcelUtils {
             switch (cellType) {
                 case NUMERIC:
                     if (org.apache.poi.ss.usermodel.DateUtil.isCellDateFormatted(cell)) {
-                        val = fmt.format(cell.getDateCellValue());
+                        val = getDateFormat().format(cell.getDateCellValue());
                     } else {
-                        val = df.format(cell.getNumericCellValue());
+                        val = getDecimalFormat().format(cell.getNumericCellValue());
                     }
                     break;
                 case STRING:
