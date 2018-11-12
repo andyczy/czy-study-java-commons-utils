@@ -1,6 +1,5 @@
 /**
- * synchronized�ؼ���
- * ��ĳ���������
+ * synchronized
  * @author mashibing
  */
 
@@ -12,7 +11,7 @@ public class T {
 	private Object o = new Object();
 	
 	public void m() {
-		synchronized(o) { //�κ��߳�Ҫִ������Ĵ��룬�������õ�o����
+		synchronized(o) {
 			count--;
 			System.out.println(Thread.currentThread().getName() + " count = " + count);
 		}
