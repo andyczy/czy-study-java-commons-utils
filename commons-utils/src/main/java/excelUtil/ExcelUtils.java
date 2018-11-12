@@ -29,8 +29,7 @@ public class ExcelUtils {
 
     /**
      * 更新日志：
-     * 1.解决 SimpleDateFormat 与 DecimalFormat 线程安全问题。
-     *
+     * 1.解决 SimpleDateFormat 与 DecimalFormat 线程安全问题[2018-11-07]。
      */
     private static final ThreadLocal<SimpleDateFormat> fmt = new ThreadLocal<>();
     private static final String MESSAGE_FORMAT = "yyyy-MM-dd";
@@ -48,6 +47,7 @@ public class ExcelUtils {
         }
         return format;
     }
+
     private static final DecimalFormat getDecimalFormat() {
         DecimalFormat format = df.get();
         if (format == null) {
@@ -56,7 +56,6 @@ public class ExcelUtils {
         }
         return format;
     }
-
 
 
     /**
@@ -71,10 +70,10 @@ public class ExcelUtils {
      * 6.可提供模板下载。
      * 7.每个表格的大标题[2018-09-14]
      * 8.自定义列宽：对每个单元格自定义列宽[2018-09-18]
-     * 9.自定义样式：对每个单元格自定义样式[2018-10-22]-[2018-10-25修复]
+     * 9.自定义样式：对每个单元格自定义样式[2018-10-22][2018-10-25修复][2018-11-12添加行高]
      * 10.自定义单元格合并：对每个单元格合并[2018-10-22]
      * 11.固定表头[2018-10-23]
-     * 12.自定义样式：单元格自定义某一列或者某一行样式[2018-10-30]
+     * 12.自定义样式：单元格自定义某一列或者某一行样式[2018-10-30][2018-11-12添加行高]
      * <p>
      * 版  本:
      * 1.apache poi 3.17
@@ -115,7 +114,7 @@ public class ExcelUtils {
                     sxssfRow = sxssfSheet.createRow(jRow);
                     Cell cell = createCell(sxssfRow, jRow, labelName[k]);
                     setMergedRegion(sxssfSheet, 0, 0, 0, list.get(0).length - 1);
-                    setExcelStyles(cell, sxssfWorkbook, 18, true, true, false, false, false, null);
+                    setExcelStyles(cell, sxssfWorkbook, sxssfRow, 18, true, true, false, false, false, null, null);
                     jRow = 1;
                 }
                 //  自定义：每个单元格自定义合并单元格：对每个单元格自定义合并单元格（看该方法说明）。
@@ -144,21 +143,21 @@ public class ExcelUtils {
                         Cell cell = createCell(sxssfRow, columnIndex, listValue[j]);
                         columnIndex++;
                         //  所有单元格默认样式。
-                        setExcelStyles(cell, sxssfWorkbook, null, null, true, true, false, false, null);
+                        setExcelStyles(cell, sxssfWorkbook, sxssfRow, null, null, true, true, false, false, null, null);
                         //  自定义：每个表格每一列的样式（看该方法说明）。
                         if (columnStyles != null && labelName != null && jRow > 1) {
-                            setExcelCellStyles(cell, sxssfWorkbook, (List) columnStyles.get(k + 1), j);
+                            setExcelCellStyles(cell, sxssfWorkbook, sxssfRow, (List) columnStyles.get(k + 1), j);
                         }
                         if (columnStyles != null && labelName == null && jRow > 0) {
-                            setExcelCellStyles(cell, sxssfWorkbook, (List) columnStyles.get(k + 1), j);
+                            setExcelCellStyles(cell, sxssfWorkbook, sxssfRow, (List) columnStyles.get(k + 1), j);
                         }
                         //  自定义：每个表格每一行的样式（看该方法说明）。
                         if (rowStyles != null) {
-                            setExcelCellStyles(cell, sxssfWorkbook, (List) rowStyles.get(k + 1), jRow);
+                            setExcelCellStyles(cell, sxssfWorkbook, sxssfRow, (List) rowStyles.get(k + 1), jRow);
                         }
                         //  自定义：每一个单元格样式（看该方法说明）。
                         if (styles != null) {
-                            setExcelStyles(cells, sxssfWorkbook, (List<List<Object[]>>) styles.get(k + 1), j, jRow);
+                            setExcelStyles(cells, sxssfWorkbook, sxssfRow, (List<List<Object[]>>) styles.get(k + 1), j, jRow);
                         }
                     }
                     jRow++;
@@ -277,13 +276,14 @@ public class ExcelUtils {
     /**
      * 判断字符串是否为空
      * 源码：只是为了该类不引入其他 jar 包
+     *
      * @param str
      * @return
      */
     public static boolean isBlank(String str) {
         int strLen;
         if (str != null && (strLen = str.length()) != 0) {
-            for(int i = 0; i < strLen; ++i) {
+            for (int i = 0; i < strLen; ++i) {
                 if (!Character.isWhitespace(str.charAt(i))) {
                     return false;
                 }
@@ -433,9 +433,10 @@ public class ExcelUtils {
      * @param isBorder     是否加边框
      * @param leftBoolean  左对齐
      * @param rightBoolean 右对齐
+     * @param height       行高
      */
-    public static void setExcelStyles(Cell cell, SXSSFWorkbook wb, Integer fontSize, Boolean bold, Boolean center, Boolean isBorder, Boolean leftBoolean,
-                                      Boolean rightBoolean, Integer fontColor) {
+    public static void setExcelStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, Integer fontSize, Boolean bold, Boolean center, Boolean isBorder, Boolean leftBoolean,
+                                      Boolean rightBoolean, Integer fontColor, Integer height) {
         CellStyle cellStyle = wb.createCellStyle();
         //左右居中、上下居中
         if (center != null && center) {
@@ -460,6 +461,10 @@ public class ExcelUtils {
         if (bold != null && bold) {
             font.setBold(bold);
         }
+        //行高
+        if (height != null) {
+            sxssfRow.setHeight((short) (height * 2));
+        }
         font.setFontName("宋体");
         font.setFontHeight(fontSize == null ? 12 : fontSize);
         cellStyle.setFont(font);
@@ -474,15 +479,15 @@ public class ExcelUtils {
      * @param cell
      * @param wb
      * @param rowstyleList
-     * @param rowIndex     说明：是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？
+     * @param rowIndex     说明：是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ —— 颜色、字体、行高？
      *                     HashMap hashMap = new HashMap();
      *                     List list = new ArrayList();
-     *                     list.add(new Boolean[]{true, false, false, false, true});                //样式
-     *                     list.add(new Integer[]{1, 3});                                          //第几行或者是第几列
-     *                     list.add(new Integer[]{10,14});                                         //颜色值 、字体大小
-     *                     hashMap.put(1,list);                                                    //第一表格
+     *                     list.add(new Boolean[]{true, false, false, false, true});                //1、样式
+     *                     list.add(new Integer[]{1, 3});                                           //2、第几行或者是第几列
+     *                     list.add(new Integer[]{10,14,null});                                     //3、颜色值 、字体大小、行高（可不设置）
+     *                     hashMap.put(1,list);                                                     //第一表格
      */
-    public static void setExcelCellStyles(Cell cell, SXSSFWorkbook wb, List<Object[]> rowstyleList, int rowIndex) {
+    public static void setExcelCellStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, List<Object[]> rowstyleList, int rowIndex) {
         if (rowstyleList != null && rowstyleList.size() > 0) {
             Integer[] rowstyle = (Integer[]) rowstyleList.get(1);
             for (int i = 0; i < rowstyle.length; i++) {
@@ -501,14 +506,19 @@ public class ExcelUtils {
                     //颜色
                     Integer fontColor = null;
                     Integer fontSize = null;
+                    Integer height = null;
+                    //当有设置颜色值 、字体大小、行高才获取值
                     if (rowstyleList.size() >= 3) {
                         int leng = rowstyleList.get(2).length;
                         fontColor = (Integer) rowstyleList.get(2)[0];
                         if (leng >= 2) {
                             fontSize = (Integer) rowstyleList.get(2)[1];
                         }
+                        if (leng >= 3) {
+                            height = (Integer) rowstyleList.get(2)[2];
+                        }
                     }
-                    setExcelStyles(cell, wb, fontSize, boldBoolean, centerBoolean, isSetBorder, leftBoolean, rightBoolean, fontColor);
+                    setExcelStyles(cell, wb, sxssfRow, fontSize, boldBoolean, centerBoolean, isSetBorder, leftBoolean, rightBoolean, fontColor, height);
                 }
             }
         }
@@ -517,16 +527,16 @@ public class ExcelUtils {
     /**
      * @param cell
      * @param wb
-     * @param styles 是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？  —— 颜色、字体
+     * @param styles 是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？  —— 颜色、字体、行高？
      *               HashMap cellStyles = new HashMap();
      *               List< List<Object[]>> list = new ArrayList<>();
      *               List<Object[]> objectsList = new ArrayList<>();
      *               List<Object[]> objectsListTwo = new ArrayList<>();
      *               objectsList.add(new Boolean[]{true, false, false, false, true});      //1、样式一（必须放第一）
-     *               objectsList.add(new Integer[]{10, 12});                               //1、颜色和字体
+     *               objectsList.add(new Integer[]{10, 12});                               //1、颜色值 、字体大小、行高（必须放第二）
      *               <p>
      *               objectsListTwo.add(new Boolean[]{false, false, false, true, true});   //2、样式二（必须放第一）
-     *               objectsListTwo.add(new Integer[]{10, 12});                            //2、颜色和字体
+     *               objectsListTwo.add(new Integer[]{10, 12,null});                       //2、颜色值 、字体大小、行高（必须放第二）
      *               <p>
      *               objectsList.add(new Integer[]{5, 1});                                 //1、第五行第一列
      *               objectsList.add(new Integer[]{6, 1});                                 //1、第六行第一列
@@ -535,13 +545,11 @@ public class ExcelUtils {
      *               <p>
      *               cellStyles.put(1, list);                                              //第一个表格所有自定义单元格样式
      */
-    public static void setExcelStyles(Cell cell, SXSSFWorkbook wb, List<List<Object[]>> styles, int cellIndex, int rowIndex) {
+    public static void setExcelStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<Object[]>> styles, int cellIndex, int rowIndex) {
         if (styles != null) {
             for (int z = 0; z < styles.size(); z++) {
                 List<Object[]> stylesList = styles.get(z);
                 if (stylesList != null) {
-                    //颜色和字体
-                    Integer[] fontColor = (Integer[]) stylesList.get(1);
                     //样式
                     Boolean[] bool = (Boolean[]) stylesList.get(0);
                     //左右居中、上下居中
@@ -554,11 +562,27 @@ public class ExcelUtils {
                     Boolean boldBoolean = Boolean.valueOf(bool[3]);
                     //边框
                     Boolean isSetBorder = Boolean.valueOf(bool[4]);
+
+                    //颜色和字体
+                    Integer fontColor = null;
+                    Integer fontSize = null;
+                    Integer height = null;
+                    //当有设置颜色值 、字体大小、行高才获取值
+                    if (stylesList.size() >= 2) {
+                        int leng = stylesList.get(1).length;
+                        fontColor = (Integer) stylesList.get(1)[0];
+                        if (leng >= 2) {
+                            fontSize = (Integer) stylesList.get(1)[1];
+                        }
+                        if (leng >= 3) {
+                            height = (Integer) stylesList.get(1)[2];
+                        }
+                    }
                     for (int m = 2; m < stylesList.size(); m++) {
                         //第几行第几列
                         Integer[] str = (Integer[]) stylesList.get(m);
                         if (cellIndex + 1 == (str[1]) && rowIndex + 1 == (str[0])) {
-                            setExcelStyles(cell, wb, fontColor[1], boldBoolean, centerBoolean, isSetBorder, leftBoolean, rightBoolean, fontColor[0]);
+                            setExcelStyles(cell, wb, sxssfRow, fontSize, boldBoolean, centerBoolean, isSetBorder, leftBoolean, rightBoolean, fontColor, height);
                         }
                     }
                 }

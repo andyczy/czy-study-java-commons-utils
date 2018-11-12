@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java" afterDir="false" />
-    </list>
+    <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/json/target/" />
     <ignored path="$PROJECT_DIR$/base/target/" />
     <ignored path="$PROJECT_DIR$/lambda/target/" />
@@ -22,7 +19,7 @@
     <session id="1037378791">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="31" />
+          <entry key="project.closed" value="32" />
           <entry key="project.open.time.0" value="22" />
           <entry key="project.open.time.1" value="9" />
           <entry key="project.open.time.7" value="1" />
@@ -108,20 +105,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="44">
+              <caret line="2" selection-start-line="2" selection-end-line="14" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="3" />
+            <state relative-caret-position="220">
+              <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -184,8 +181,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_001/T.java" />
-        <option value="$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java" />
         <option value="$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java" />
       </list>
     </option>
   </component>
@@ -294,7 +291,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541984380562" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541984484372" />
     <property name="last_opened_file_path" value="E:/xintou/aim/aim-parent" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -442,7 +439,7 @@
       <workItem from="1540886605056" duration="23000" />
       <workItem from="1541143073499" duration="185000" />
       <workItem from="1541982805528" duration="951000" />
-      <workItem from="1541983847004" duration="459000" />
+      <workItem from="1541983847004" duration="673000" />
     </task>
     <task id="LOCAL-00001" summary="Excel工具类">
       <created>1536540899701</created>
@@ -640,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541983722496</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="多线程">
+      <created>1541984341069</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1541984341069</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -661,13 +665,21 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32412000" />
+    <option name="totallyTimeSpent" value="32626000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22878624" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22878624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -676,12 +688,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32960895" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32960895" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32960895" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32960895" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
@@ -742,6 +754,32 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -766,7 +804,8 @@
     <MESSAGE value="从第几行开始获取数据，默认从第二行开始获取（可为空，填 3 则从第三行开始获取）" />
     <MESSAGE value="调整" />
     <MESSAGE value="自定义" />
-    <option name="LAST_COMMIT_MESSAGE" value="自定义" />
+    <MESSAGE value="多线程" />
+    <option name="LAST_COMMIT_MESSAGE" value="多线程" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://E:/MavenRespository/respository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/routines/DoubleValidator.class">
@@ -1085,17 +1124,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java">
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="3" />
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="14" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java">
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>
