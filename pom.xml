@@ -15,7 +15,7 @@
         <module>json</module>
         <module>xml</module>
         <module>lambda</module>
-        <module>base</module>
+        <module>java-base</module>
     </modules>
 
 

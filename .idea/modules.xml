@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/commons-utils/commons-utils.iml" filepath="$PROJECT_DIR$/commons-utils/commons-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" filepath="$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" filepath="$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-base/java-base.iml" filepath="$PROJECT_DIR$/java-base/java-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/json/json.iml" filepath="$PROJECT_DIR$/json/json.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lambda/lambda.iml" filepath="$PROJECT_DIR$/lambda/lambda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xml/xml.iml" filepath="$PROJECT_DIR$/xml/xml.iml" />
     </modules>
   </component>
 </project>
