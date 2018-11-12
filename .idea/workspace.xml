@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/json/target/" />
+    <ignored path="$PROJECT_DIR$/base/target/" />
+    <ignored path="$PROJECT_DIR$/lambda/target/" />
+    <ignored path="$PROJECT_DIR$/xml/target/" />
+    <ignored path="$PROJECT_DIR$/commons-utils/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/java-base/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1037378791">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="31" />
+          <entry key="project.open.time.0" value="22" />
+          <entry key="project.open.time.1" value="9" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="32" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="0-SNAPSHOT" value="1" />
+          <entry key="class" value="62" />
+          <entry key="gitignore" value="1" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="82" />
+          <entry key="md" value="1" />
+          <entry key="png" value="2" />
+          <entry key="pom" value="3" />
+          <entry key="properties" value="1" />
+          <entry key="xml" value="12" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="62" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="Image" value="2" />
+          <entry key="JAVA" value="82" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="1" />
+          <entry key="UML" value="1" />
+          <entry key="XML" value="15" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="27" />
+          <entry key="java" value="1582" />
+          <entry key="md" value="16" />
+          <entry key="txt" value="108" />
+          <entry key="xml" value="35" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1582" />
+          <entry key="Markdown" value="16" />
+          <entry key="PLAIN_TEXT" value="135" />
+          <entry key="XML" value="35" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/example01/SyncDubbo1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/example01/test6/ChangeLock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="880">
+              <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+              <folding>
+                <element signature="e#709#710#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/example01/test6/DeadLock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>copy</find>
+      <find>onlyReturnErrors</find>
+      <find>getInstance</find>
+      <find>setColumnWidth</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="E:/MavenRespository/settings.xml" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/commons_study_test/DateValidatorTTest.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/DemoBidiMap.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/BeanUtilsTest.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/CollextionsListUtilsTest.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/ftpUtil/FtpUtil.java" />
+        <option value="$PROJECT_DIR$/commons-utils/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/JsonUtils.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/dateUtil/DateUtil.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/validatorUtil/validatorUtil.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/uuidUtils/UUIDUtils.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/encodeUtils/EncodeUtils.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/EncodeTest.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/ExcelUtilsOptimize.java" />
+        <option value="$PROJECT_DIR$/base/pom.xml" />
+        <option value="$PROJECT_DIR$/base/src/main/java/czy/dataStructure/array/PersonArray.java" />
+        <option value="$PROJECT_DIR$/base/src/main/java/czy/Person.java" />
+        <option value="$PROJECT_DIR$/base/src/main/java/czy/reflection/field/Test.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/io/FlieOutputStream.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/io/Student.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/io/Serialization_test.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/Book.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/field/Test.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/Book/Book.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/conllection/list/list_linked/dome2/Client.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/calss/Test.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/reflection/Test.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_001/T.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java" />
+        <option value="$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="E:\MavenRespository\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="java-base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="java-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="java-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="java-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="java-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="thread" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="java-base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="thread" type="462c0819:PsiDirectoryNode" />
+              <item name="ThreadDemo.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541984380562" />
+    <property name="last_opened_file_path" value="E:/xintou/aim/aim-parent" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.TestThread">
+    <configuration name="EncodeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apache.commons.EncodeTest" />
+      <module name="commons-utils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apache.commons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SyncDubbo1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.example01.SyncDubbo1" />
+      <module name="java-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.example01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SyncDubbo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.example01.SyncDubbo1" />
+      <module name="base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.example01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.TestThread" />
+      <module name="java-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sTestThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.sTestThread" />
+      <module name="java-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.EncodeTest" />
+      <item itemvalue="Application.SyncDubbo1" />
+      <item itemvalue="Application.SyncDubbo1 (1)" />
+      <item itemvalue="Application.TestThread" />
+      <item itemvalue="Application.sTestThread" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestThread" />
+        <item itemvalue="Application.sTestThread" />
+        <item itemvalue="Application.SyncDubbo1 (1)" />
+        <item itemvalue="Application.SyncDubbo1" />
+        <item itemvalue="Application.EncodeTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="" />
+      <created>1536540172547</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1536540172547</updated>
+      <workItem from="1536540174016" duration="1347000" />
+      <workItem from="1536541576094" duration="5380000" />
+      <workItem from="1536627107989" duration="6862000" />
+      <workItem from="1536716585072" duration="1474000" />
+      <workItem from="1536736125146" duration="1692000" />
+      <workItem from="1536800891099" duration="1887000" />
+      <workItem from="1536826120486" duration="164000" />
+      <workItem from="1536826704771" duration="655000" />
+      <workItem from="1536829875770" duration="403000" />
+      <workItem from="1536830456478" duration="900000" />
+      <workItem from="1536888085071" duration="286000" />
+      <workItem from="1536893627979" duration="1136000" />
+      <workItem from="1536896904132" duration="467000" />
+      <workItem from="1536908462183" duration="8000" />
+      <workItem from="1537167644394" duration="1403000" />
+      <workItem from="1537231238246" duration="775000" />
+      <workItem from="1537235877678" duration="2000" />
+      <workItem from="1537235884281" duration="1280000" />
+      <workItem from="1537317679510" duration="973000" />
+      <workItem from="1537350382760" duration="225000" />
+      <workItem from="1537405106466" duration="662000" />
+      <workItem from="1537406474546" duration="74000" />
+      <workItem from="1537407843570" duration="200000" />
+      <workItem from="1537408721828" duration="31000" />
+      <workItem from="1537425391731" duration="1241000" />
+      <workItem from="1537856580354" duration="688000" />
+      <workItem from="1540361228317" duration="85000" />
+      <workItem from="1540362014046" duration="494000" />
+      <workItem from="1540886605056" duration="23000" />
+      <workItem from="1541143073499" duration="185000" />
+      <workItem from="1541982805528" duration="951000" />
+      <workItem from="1541983847004" duration="459000" />
+    </task>
+    <task id="LOCAL-00001" summary="Excel工具类">
+      <created>1536540899701</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1536540899701</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Excel工具类:合并单元格函数">
+      <created>1536545218442</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1536545218442</updated>
+    </task>
+    <task id="LOCAL-00003" summary="apache commons整理">
+      <created>1536630632808</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1536630632808</updated>
+    </task>
+    <task id="LOCAL-00004" summary="项目整理">
+      <created>1536631424441</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1536631424441</updated>
+    </task>
+    <task id="LOCAL-00005" summary="md">
+      <created>1536631602520</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1536631602520</updated>
+    </task>
+    <task id="LOCAL-00006" summary="md+">
+      <created>1536631766142</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1536631766142</updated>
+    </task>
+    <task id="LOCAL-00007" summary="md+">
+      <created>1536645921293</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1536645921293</updated>
+    </task>
+    <task id="LOCAL-00008" summary="工具类更新">
+      <created>1536737215225</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1536737215225</updated>
+    </task>
+    <task id="LOCAL-00009" summary="apache commons codec 工具类：md5  base64  hex">
+      <created>1536802452124</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1536802452125</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Excel工具类导出：添加大标题(表头)">
+      <created>1536830244774</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1536830244774</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Excel工具类优化">
+      <created>1536888359554</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1536888359554</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Excel工具类优化">
+      <created>1536894217229</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1536894217229</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Excel工具类优化">
+      <created>1536894300080</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1536894300080</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Excel工具类优化">
+      <created>1536897015891</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1536897015891</updated>
+    </task>
+    <task id="LOCAL-00015" summary="每个单元格自定义列宽[2018-09-18]">
+      <created>1537236221597</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1537236221597</updated>
+    </task>
+    <task id="LOCAL-00016" summary="合并单元格、大标题和样式">
+      <created>1537237890447</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1537237890447</updated>
+    </task>
+    <task id="LOCAL-00017" summary="md">
+      <created>1537318059250</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1537318059250</updated>
+    </task>
+    <task id="LOCAL-00018" summary="自定义列宽">
+      <created>1537350454321</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1537350454321</updated>
+    </task>
+    <task id="LOCAL-00019" summary="功能描述: 自定义列宽">
+      <created>1537405155487</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1537405155487</updated>
+    </task>
+    <task id="LOCAL-00020" summary="功能描述: 自定义列宽">
+      <created>1537408038999</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1537408038999</updated>
+    </task>
+    <task id="LOCAL-00021" summary="修改注释">
+      <created>1537408750772</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1537408750772</updated>
+    </task>
+    <task id="LOCAL-00022" summary="从第几行开始获取数据[2018-09-20]">
+      <created>1537425952017</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1537425952017</updated>
+    </task>
+    <task id="LOCAL-00023" summary="从第几行开始获取数据，默认从第二行开始获取（可为空，填 3 则从第三行开始获取）">
+      <created>1537426632356</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1537426632356</updated>
+    </task>
+    <task id="LOCAL-00024" summary="调整">
+      <created>1537856894465</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1537856894465</updated>
+    </task>
+    <task id="LOCAL-00025" summary="自定义">
+      <created>1540362060753</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1540362060753</updated>
+    </task>
+    <task id="LOCAL-00026" summary="自定义">
+      <created>1541143091862</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1541143091862</updated>
+    </task>
+    <task id="LOCAL-00027" summary="自定义">
+      <created>1541983631497</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1541983631498</updated>
+    </task>
+    <task id="LOCAL-00028" summary="自定义">
+      <created>1541983722496</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1541983722496</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="ValidatorTTest - 2018.09.11 at 10h 01m 12s.xml">
+      <configuration name="ValidatorTTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ValidatorTTest_test - 2018.09.11 at 10h 01m 30s.xml">
+      <configuration name="ValidatorTTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ValidatorTTest_testsss - 2018.09.11 at 10h 01m 40s.xml">
+      <configuration name="ValidatorTTest.testsss" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ValidatorTTest_test - 2018.09.12 at 15h 15m 20s.xml">
+      <configuration name="ValidatorTTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ValidatorTTest_test - 2018.09.12 at 15h 15m 36s.xml">
+      <configuration name="ValidatorTTest.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="32412000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22878624" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32960895" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32960895" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32975295" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29752955" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32960895" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32960895" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32975295" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Excel工具类" />
+    <MESSAGE value="Excel工具类:合并单元格函数" />
+    <MESSAGE value="apache commons整理" />
+    <MESSAGE value="项目整理" />
+    <MESSAGE value="md+" />
+    <MESSAGE value="工具类更新" />
+    <MESSAGE value="apache commons codec 工具类：md5  base64  hex" />
+    <MESSAGE value="Excel工具类导出：添加大标题(表头)" />
+    <MESSAGE value="Excel工具类优化" />
+    <MESSAGE value="每个单元格自定义列宽[2018-09-18]" />
+    <MESSAGE value="合并单元格、大标题和样式" />
+    <MESSAGE value="md" />
+    <MESSAGE value="自定义列宽" />
+    <MESSAGE value="功能描述: 自定义列宽" />
+    <MESSAGE value="修改样式" />
+    <MESSAGE value="修改注释" />
+    <MESSAGE value="从第几行开始获取数据[2018-09-20]" />
+    <MESSAGE value="从第几行开始获取数据，默认从第二行开始获取（可为空，填 3 则从第三行开始获取）" />
+    <MESSAGE value="调整" />
+    <MESSAGE value="自定义" />
+    <option name="LAST_COMMIT_MESSAGE" value="自定义" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://E:/MavenRespository/respository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/routines/DoubleValidator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="59" column="28" lean-forward="true" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/routines/AbstractCalendarValidator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/routines/AbstractFormatValidator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/routines/DateValidator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/dateUtil/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="238" column="5" lean-forward="true" selection-start-line="238" selection-start-column="5" selection-end-line="238" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/validatorUtil/ValidatorUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/uuidUtils/UUIDUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="61" column="40" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar!/org/apache/commons/codec/binary/Base64.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar!/org/apache/commons/codec/digest/Md5Crypt.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1812">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar!/org/apache/commons/codec/digest/DigestUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2010">
+          <caret line="98" column="25" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar!/org/apache/commons/codec/Encoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/EncodeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/encodeUtils/EncodeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mu.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/base.iml" />
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/field/ShowField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/BeanUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/CollectionsBagUsage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="91" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-lang/commons-lang/2.3/commons-lang-2.3.jar!/org/apache/commons/lang/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-lang/commons-lang/2.3/commons-lang-2.3.jar!/org/apache/commons/lang/Validate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2996">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/Validator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/MavenRespository/respository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/routines/IntegerValidator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="46" column="61" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/ValidatorTTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/ExcelUtilsOptimize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="633" selection-start-line="633" selection-end-line="633" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/ExcelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/czy/Person.java" />
+    <entry file="file://$PROJECT_DIR$/java-base/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/example01/SyncDubbo2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/czy/enums/ColorEnum.java" />
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/conllection/list/list_array/ourseArray/ListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/conllection/print/EnumerationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/czy/baseClass/scanner/SortNum.java" />
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/czy/baseClass/random/RandomTest.java" />
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/czy/baseClass/math/MathDom.java" />
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/czy/dataStructure/array/PersonArray.java" />
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/io/Serialization_test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/io/FlieOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/Book/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/field/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/conllection/list/list_linked/dome2/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/reflection/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_001/T.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_006/T.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/example01/SyncDubbo1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/example01/test6/ChangeLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+          <folding>
+            <element signature="e#709#710#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/example01/test6/DeadLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>java-base</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.github.virtuald:curvesapi:1.04</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
