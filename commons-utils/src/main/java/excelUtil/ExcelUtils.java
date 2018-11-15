@@ -1,3 +1,4 @@
+package com.syiti.vbp.util.support;
 
 
 import org.apache.poi.ss.usermodel.*;
@@ -73,6 +74,7 @@ public class ExcelUtils {
      * 10.自定义单元格合并：对每个单元格合并[2018-10-22]
      * 11.固定表头[2018-10-23]
      * 12.自定义样式：单元格自定义某一列或者某一行样式[2018-10-30][2018-11-12添加行高]
+     * 13.忽略边框(默认是有边框)[2018-11-15]
      * <p>
      * 版  本:
      * 1.apache poi 3.17
@@ -89,12 +91,13 @@ public class ExcelUtils {
      * @param regionMap    自定义：单元格合并（可为空）
      * @param paneMap      固定表头（可为空）
      * @param labelName    每个表格的大标题（可为空）
-     * @param fileName     文件名称(可为空，默认是：Excel数据信息表)
+     * @param fileName     文件名称(可为空，默认是：sheet 第一个名称)
+     * @param notBorderMap 忽略边框(默认是有边框)
      * @return
      */
-    public static Boolean exportForExcel(HttpServletResponse response, List<List<String[]>> dataLists, HashMap dropDownMap,
+    public static Boolean exportForExcel(HttpServletResponse response, List<List<String[]>> dataLists, HashMap notBorderMap,
                                          HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap, String fileName,
-                                         String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles) {
+                                         String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) {
         long startTime = System.currentTimeMillis();
         //  内存中保留 1000 条数据，以免内存溢出，其余写入硬盘。
         SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
@@ -113,7 +116,7 @@ public class ExcelUtils {
                     sxssfRow = sxssfSheet.createRow(jRow);
                     Cell cell = createCell(sxssfRow, jRow, labelName[k]);
                     setMergedRegion(sxssfSheet, 0, 0, 0, list.get(0).length - 1);
-                    setExcelStyles(cell, sxssfWorkbook, sxssfRow, 18, true, true, false, false, false, null, null);
+                    setExcelStyles(cell, sxssfWorkbook, sxssfRow, 16, true, true, false, false, false, null, 399);
                     jRow = 1;
                 }
                 //  自定义：每个单元格自定义合并单元格：对每个单元格自定义合并单元格（看该方法说明）。
@@ -129,8 +132,10 @@ public class ExcelUtils {
                     setColumnWidth(sxssfSheet, (HashMap) columnMap.get(k + 1));
                 }
                 //  自定义：每个表格固定表头（看该方法说明）。
+                Integer pane = 1;
                 if (paneMap != null) {
-                    createFreezePane(sxssfSheet, (Integer) paneMap.get(k + 1));
+                    pane = (Integer) paneMap.get(k + 1) + (labelName != null ? 1 : 0);
+                    createFreezePane(sxssfSheet, pane);
                 }
 
                 //  写入标题与数据。
@@ -142,12 +147,9 @@ public class ExcelUtils {
                         Cell cell = createCell(sxssfRow, columnIndex, listValue[j]);
                         columnIndex++;
                         //  所有单元格默认样式。
-                        setExcelStyles(cell, sxssfWorkbook, sxssfRow, null, null, true, true, false, false, null, null);
+                        setExcelStyles(notBorderMap, cell, sxssfWorkbook, sxssfRow, k, jRow);
                         //  自定义：每个表格每一列的样式（看该方法说明）。
-                        if (columnStyles != null && labelName != null && jRow > 1) {
-                            setExcelCellStyles(cell, sxssfWorkbook, sxssfRow, (List) columnStyles.get(k + 1), j);
-                        }
-                        if (columnStyles != null && labelName == null && jRow > 0) {
+                        if (columnStyles != null && jRow >= pane) {
                             setExcelCellStyles(cell, sxssfWorkbook, sxssfRow, (List) columnStyles.get(k + 1), j);
                         }
                         //  自定义：每个表格每一行的样式（看该方法说明）。
@@ -167,7 +169,7 @@ public class ExcelUtils {
             response.setHeader("Charset", "UTF-8");
             response.setHeader("Content-Type", "application/force-download");
             response.setHeader("Content-Type", "application/vnd.ms-excel");
-            response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? "Excel数据信息表" : fileName, "utf8") + ".xlsx");
+            response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? "Excel数据信息表" : sheetName[0], "utf8") + ".xlsx");
             response.flushBuffer();
             outputStream = response.getOutputStream();
             sxssfWorkbook.write(outputStream);
@@ -424,6 +426,29 @@ public class ExcelUtils {
 
 
     /**
+     * 所有数据的样式(全加边框、不加粗、12号字体、居中、黑色字体)
+     *
+     * @param notBorderMap 忽略边框
+     * @param cell
+     * @param wb
+     * @param sxssfRow
+     * @param k
+     * @param jRow
+     */
+    public static void setExcelStyles(HashMap notBorderMap, Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, int k, int jRow) {
+        Boolean border = true;
+        if (notBorderMap != null) {
+            Integer[] borderInt = (Integer[]) notBorderMap.get(k + 1);
+            for (int i = 0; i < borderInt.length; i++) {
+                if (borderInt[i] == jRow) {
+                    border = false;
+                }
+            }
+        }
+        setExcelStyles(cell, wb, sxssfRow, null, null, true, border, false, false, null, null);
+    }
+
+    /**
      * @param cell         Cell对象。
      * @param wb           SXSSFWorkbook对象。
      * @param fontSize     字体大小。
@@ -444,11 +469,12 @@ public class ExcelUtils {
         }
         //右对齐
         if (rightBoolean != null && rightBoolean) {
-            cellStyle.setAlignment(HorizontalAlignment.CENTER);
+            cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
             cellStyle.setAlignment(HorizontalAlignment.RIGHT);
         }
         //左对齐
         if (leftBoolean != null && leftBoolean) {
+            cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
             cellStyle.setAlignment(HorizontalAlignment.LEFT);
         }
         //边框
@@ -492,17 +518,6 @@ public class ExcelUtils {
             for (int i = 0; i < rowstyle.length; i++) {
                 if (rowIndex == rowstyle[i]) {
                     Boolean[] bool = (Boolean[]) rowstyleList.get(0);
-                    //左右居中、上下居中
-                    Boolean centerBoolean = Boolean.valueOf(bool[0]);
-                    //右对齐
-                    Boolean rightBoolean = Boolean.valueOf(bool[1]);
-                    //左对齐
-                    Boolean leftBoolean = Boolean.valueOf(bool[2]);
-                    //加粗
-                    Boolean boldBoolean = Boolean.valueOf(bool[3]);
-                    //边框
-                    Boolean isSetBorder = Boolean.valueOf(bool[4]);
-                    //颜色
                     Integer fontColor = null;
                     Integer fontSize = null;
                     Integer height = null;
@@ -517,7 +532,7 @@ public class ExcelUtils {
                             height = (Integer) rowstyleList.get(2)[2];
                         }
                     }
-                    setExcelStyles(cell, wb, sxssfRow, fontSize, boldBoolean, centerBoolean, isSetBorder, leftBoolean, rightBoolean, fontColor, height);
+                    setExcelStyles(cell, wb, sxssfRow, fontSize, Boolean.valueOf(bool[3]), Boolean.valueOf(bool[0]), Boolean.valueOf(bool[4]), Boolean.valueOf(bool[2]), Boolean.valueOf(bool[1]), fontColor, height);
                 }
             }
         }
@@ -551,17 +566,6 @@ public class ExcelUtils {
                 if (stylesList != null) {
                     //样式
                     Boolean[] bool = (Boolean[]) stylesList.get(0);
-                    //左右居中、上下居中
-                    Boolean centerBoolean = Boolean.valueOf(bool[0]);
-                    //右对齐
-                    Boolean rightBoolean = Boolean.valueOf(bool[1]);
-                    //左对齐
-                    Boolean leftBoolean = Boolean.valueOf(bool[2]);
-                    //加粗
-                    Boolean boldBoolean = Boolean.valueOf(bool[3]);
-                    //边框
-                    Boolean isSetBorder = Boolean.valueOf(bool[4]);
-
                     //颜色和字体
                     Integer fontColor = null;
                     Integer fontSize = null;
@@ -577,11 +581,11 @@ public class ExcelUtils {
                             height = (Integer) stylesList.get(1)[2];
                         }
                     }
+                    //第几行第几列
                     for (int m = 2; m < stylesList.size(); m++) {
-                        //第几行第几列
                         Integer[] str = (Integer[]) stylesList.get(m);
                         if (cellIndex + 1 == (str[1]) && rowIndex + 1 == (str[0])) {
-                            setExcelStyles(cell, wb, sxssfRow, fontSize, boldBoolean, centerBoolean, isSetBorder, leftBoolean, rightBoolean, fontColor, height);
+                            setExcelStyles(cell, wb, sxssfRow, fontSize, Boolean.valueOf(bool[3]), Boolean.valueOf(bool[0]), Boolean.valueOf(bool[4]), Boolean.valueOf(bool[2]), Boolean.valueOf(bool[1]), fontColor, height);
                         }
                     }
                 }
