@@ -1,4 +1,4 @@
-package apache.commons;
+package apache.commons.test;
 
 import org.apache.commons.collections.BidiMap;
 import org.apache.commons.collections.Factory;

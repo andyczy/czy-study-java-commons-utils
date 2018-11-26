@@ -1,4 +1,4 @@
-package apache.commons;
+package apache.commons.test;
 
 import org.apache.commons.beanutils.BeanUtils;
 

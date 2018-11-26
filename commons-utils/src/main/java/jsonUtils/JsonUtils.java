@@ -44,7 +44,7 @@ public class JsonUtils {
      * Description：将json结果集转化为对象
      *
      * @param jsonData json数据
-     * @param clazz    对象中的object类型
+     * @param beanType 对象中的object类型
      * @return
      */
     public static <T> T jsonToPojo(String jsonData, Class<T> beanType) {
@@ -66,7 +66,6 @@ public class JsonUtils {
      * @return
      */
     public static <T> List<T> jsonToList(String jsonData, Class<T> beanType) {
-
         JavaType javaType = MAPPER.getTypeFactory().constructParametricType(List.class, beanType);
 
         try {

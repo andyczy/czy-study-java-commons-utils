@@ -1,4 +1,4 @@
-package apache.commons;
+package apache.commons.test;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
