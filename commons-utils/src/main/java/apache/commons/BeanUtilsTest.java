@@ -15,7 +15,7 @@ public class BeanUtilsTest {
         book.setIsbn("123");
         Object cloneBean = BeanUtils.cloneBean(book);
 
-        book.setName("czy");
+        book.setName("xml.czy");
 
 
         System.out.println(book);

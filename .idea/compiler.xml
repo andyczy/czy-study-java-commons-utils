@@ -8,9 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="commons-utils" />
         <module name="java-base" />
-        <module name="json" />
-        <module name="lambda" />
-        <module name="xml" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
