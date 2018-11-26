@@ -2,61 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_47.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_digester_commons_digester_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_net_commons_net_3_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_validator_commons_validator_1_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/FastJsonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/fastjson/FastJSONHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/fastjson/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/fastjson/Program1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/createrGson/GsonUserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/createrObject/Fun1_JSONObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/createrObject/Fun2_JSONObject_Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/createrObject/Fun3_JSONArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/createrObject/Fun4_JSONArray_Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/createrObject/JsonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/createrObject/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/jsonList/GsonArrayBookTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/jsonList/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/jsonMap/GsonArrayBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/jsonMap/Gson_Get_Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/jsonMap/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/readerParser/JsonParser_JsonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/readerParser/JsonParser_JsonTestDom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/java/json/gson/readerParser/JsonParser_JsonTestDomS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-base/src/main/resources/gson/Test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/commons-utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/commons-utils.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/BeanUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/BeanUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/CollectionsBagUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/CollectionsBagUsage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/CollextionsBidiMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/CollextionsBidiMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/CollextionsListUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/CollextionsListUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/CommonLogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/CommonLogTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/EncodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/EncodeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/ValidatorTTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/dateUtil/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/dateUtil/DateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/JsonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/java-base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-base/java-base.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mu.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/json/target/" />
     <ignored path="$PROJECT_DIR$/base/target/" />
@@ -88,8 +36,8 @@
           <entry key="class" value="62" />
           <entry key="gitignore" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="96" />
-          <entry key="md" value="1" />
+          <entry key="java" value="98" />
+          <entry key="md" value="2" />
           <entry key="png" value="2" />
           <entry key="pom" value="3" />
           <entry key="properties" value="1" />
@@ -101,8 +49,8 @@
           <entry key="CLASS" value="62" />
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="2" />
-          <entry key="JAVA" value="96" />
-          <entry key="Markdown" value="1" />
+          <entry key="JAVA" value="98" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="1" />
           <entry key="UML" value="1" />
@@ -113,7 +61,7 @@
         <counts>
           <entry key="dummy" value="27" />
           <entry key="java" value="1607" />
-          <entry key="md" value="16" />
+          <entry key="md" value="17" />
           <entry key="txt" value="128" />
           <entry key="xml" value="91" />
         </counts>
@@ -121,7 +69,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1607" />
-          <entry key="Markdown" value="16" />
+          <entry key="Markdown" value="17" />
           <entry key="PLAIN_TEXT" value="155" />
           <entry key="XML" value="91" />
         </counts>
@@ -151,11 +99,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="509">
               <caret line="145" column="25" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="110">
+                <caret line="5" selection-start-line="5" selection-end-line="5" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/exceptionUtil/ExceptionUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="26" column="23" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpClientUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1760">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -208,7 +186,6 @@
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/BeanUtilsTest.java" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/CollextionsListUtilsTest.java" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/ftpUtil/FtpUtil.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/validatorUtil/validatorUtil.java" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/uuidUtils/UUIDUtils.java" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/encodeUtils/EncodeUtils.java" />
@@ -239,6 +216,7 @@
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/JsonUtils.java" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/FastJsonUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -324,7 +302,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dateUtil" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptionUtil" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
@@ -333,7 +311,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonUtils" type="462c0819:PsiDirectoryNode" />
+              <item name="httpClientUtil" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
@@ -387,10 +365,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -403,7 +377,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/czy/czy-study-java-commons-utils/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543221572615" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543222021572" />
     <property name="last_opened_file_path" value="E:/xintou/aim/aim-parent" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -557,7 +531,7 @@
       <workItem from="1541982805528" duration="951000" />
       <workItem from="1541983847004" duration="673000" />
       <workItem from="1542011685544" duration="154000" />
-      <workItem from="1543220084957" duration="1610000" />
+      <workItem from="1543220084957" duration="1935000" />
     </task>
     <task id="LOCAL-00001" summary="Excel工具类">
       <created>1536540899701</created>
@@ -783,7 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543220587886</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="FastJson数度快">
+      <created>1543221707252</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1543221707252</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -804,7 +785,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34390000" />
+    <option name="totallyTimeSpent" value="34715000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -946,20 +927,10 @@
     <MESSAGE value="多线程" />
     <MESSAGE value="Excel导出自定义样式:设置行高" />
     <MESSAGE value="base" />
-    <option name="LAST_COMMIT_MESSAGE" value="base" />
+    <MESSAGE value="FastJson数度快" />
+    <option name="LAST_COMMIT_MESSAGE" value="FastJson数度快" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mu.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/base/base.iml" />
-    <entry file="file://$PROJECT_DIR$/java-base/src/main/java/field/ShowField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/CollectionsBagUsage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -1266,10 +1237,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/exceptionUtil/ExceptionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpClientUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1760">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
           <caret line="145" column="25" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="110">
+            <caret line="5" selection-start-line="5" selection-end-line="5" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
