@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/json/target/" />
     <ignored path="$PROJECT_DIR$/base/target/" />
@@ -22,7 +21,7 @@
     <session id="1037378791">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="34" />
+          <entry key="project.closed" value="35" />
           <entry key="project.open.time.0" value="25" />
           <entry key="project.open.time.1" value="9" />
           <entry key="project.open.time.7" value="1" />
@@ -60,7 +59,7 @@
         <counts>
           <entry key="dummy" value="27" />
           <entry key="java" value="1607" />
-          <entry key="md" value="73" />
+          <entry key="md" value="77" />
           <entry key="txt" value="130" />
           <entry key="xml" value="91" />
         </counts>
@@ -68,7 +67,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1607" />
-          <entry key="Markdown" value="73" />
+          <entry key="Markdown" value="77" />
           <entry key="PLAIN_TEXT" value="157" />
           <entry key="XML" value="91" />
         </counts>
@@ -90,8 +89,8 @@
         <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="396">
-                <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <first_editor relative-caret-position="66">
+                <caret line="3" selection-start-line="3" selection-end-line="7" selection-end-column="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -343,7 +342,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/czy/czy-study-java-commons-utils/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543222541575" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543302065529" />
     <property name="last_opened_file_path" value="E:/xintou/aim/aim-parent" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -498,7 +497,7 @@
       <workItem from="1541983847004" duration="673000" />
       <workItem from="1542011685544" duration="154000" />
       <workItem from="1543220084957" duration="3029000" />
-      <workItem from="1543289908588" duration="178000" />
+      <workItem from="1543289908588" duration="261000" />
     </task>
     <task id="LOCAL-00001" summary="Excel工具类">
       <created>1536540899701</created>
@@ -745,7 +744,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543222083474</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="md">
+      <created>1543290146502</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1543290146502</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -766,7 +772,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35987000" />
+    <option name="totallyTimeSpent" value="36070000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -781,7 +787,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23845327" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23845327" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -812,7 +818,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32975295" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23523094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23845327" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1234,8 +1240,8 @@
     <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="396">
-            <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <first_editor relative-caret-position="66">
+            <caret line="3" selection-start-line="3" selection-end-line="7" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>
