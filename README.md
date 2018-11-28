@@ -7,7 +7,7 @@
     <dependency>        
         <groupId>com.github.andyczy</groupId>       
         <artifactId>java-excel-utils</artifactId>       
-        <version>2.0</version>      
+        <version>2.0.1</version>      
     </dependency>       
   
   是JAVA操作Excel导入导出的工具类，目的是简化逻辑操作、可拓展Excel导入导出配置。         
