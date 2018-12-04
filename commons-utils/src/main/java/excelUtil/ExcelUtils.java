@@ -1,4 +1,4 @@
-package com.syiti.vbp.util.support;
+package com.github.andyczy.java.excel;
 
 
 import org.apache.poi.ss.usermodel.*;
@@ -36,8 +36,8 @@ public class ExcelUtils {
 
     private static final ThreadLocal<DecimalFormat> df = new ThreadLocal<>();
     private static final String MESSAGE_FORMAT_df = "#.###";
-    private static final String DataValidationError1 = "本系统——提醒您！";
-    private static final String DataValidationError2 = "数据不规范，请选择表格列表中的数据！";
+    private static final String DataValidationError1 = "表格数据填写不规范！";
+    private static final String DataValidationError2 = "请选择表格列表中的数据！";
 
     private static final SimpleDateFormat getDateFormat() {
         SimpleDateFormat format = fmt.get();
@@ -169,7 +169,7 @@ public class ExcelUtils {
             response.setHeader("Charset", "UTF-8");
             response.setHeader("Content-Type", "application/force-download");
             response.setHeader("Content-Type", "application/vnd.ms-excel");
-            response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? "Excel数据信息表" : sheetName[0], "utf8") + ".xlsx");
+            response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? sheetName[0] : fileName, "utf8") + ".xlsx");
             response.flushBuffer();
             outputStream = response.getOutputStream();
             sxssfWorkbook.write(outputStream);
@@ -281,7 +281,7 @@ public class ExcelUtils {
      * @param str
      * @return
      */
-    public static boolean isBlank(String str) {
+    private static boolean isBlank(String str) {
         int strLen;
         if (str != null && (strLen = str.length()) != 0) {
             for (int i = 0; i < strLen; ++i) {
@@ -303,7 +303,7 @@ public class ExcelUtils {
      * @param sxssfSheet
      * @param row
      */
-    public static void createFreezePane(SXSSFSheet sxssfSheet, Integer row) {
+    private static void createFreezePane(SXSSFSheet sxssfSheet, Integer row) {
         if (row != null && row > 0) {
             sxssfSheet.createFreezePane(0, row, 0, 1);
         }
@@ -321,7 +321,7 @@ public class ExcelUtils {
      * @param sxssfSheet
      * @param map
      */
-    public static void setColumnWidth(SXSSFSheet sxssfSheet, HashMap map) {
+    private static void setColumnWidth(SXSSFSheet sxssfSheet, HashMap map) {
         if (map != null) {
             Iterator iterator = map.entrySet().iterator();
             while (iterator.hasNext()) {
@@ -346,7 +346,7 @@ public class ExcelUtils {
      * @param sheet
      * @param rowColList
      */
-    public static void setMergedRegion(SXSSFSheet sheet, ArrayList<Integer[]> rowColList) {
+    private static void setMergedRegion(SXSSFSheet sheet, ArrayList<Integer[]> rowColList) {
         if (rowColList != null && rowColList.size() > 0) {
             for (int i = 0; i < rowColList.size(); i++) {
                 Integer[] str = rowColList.get(i);
@@ -370,7 +370,7 @@ public class ExcelUtils {
      * @param firstCol
      * @param lastCol
      */
-    public static void setMergedRegion(SXSSFSheet sheet, int firstRow, int lastRow, int firstCol, int lastCol) {
+    private static void setMergedRegion(SXSSFSheet sheet, int firstRow, int lastRow, int firstCol, int lastCol) {
         sheet.addMergedRegion(new CellRangeAddress(firstRow, lastRow, firstCol, lastCol));
     }
 
@@ -389,7 +389,7 @@ public class ExcelUtils {
      *                         sheet1.add(sex);
      *                         hashMap.put(1,sheet1);                                      //第一个表格的下拉列表值
      */
-    public static void setDataValidation(SXSSFSheet sheet, List<String[]> dropDownListData, int dataListSize) {
+    private static void setDataValidation(SXSSFSheet sheet, List<String[]> dropDownListData, int dataListSize) {
         if (dropDownListData.size() > 0) {
             for (int col = 0; col < dropDownListData.get(0).length; col++) {
                 Integer colv = Integer.parseInt(dropDownListData.get(0)[col]);
@@ -408,7 +408,7 @@ public class ExcelUtils {
      * @param firstCol
      * @param lastCol
      */
-    public static void setDataValidation(SXSSFSheet xssfWsheet, String[] list, Integer firstRow, Integer lastRow, Integer firstCol, Integer lastCol) {
+    private static void setDataValidation(SXSSFSheet xssfWsheet, String[] list, Integer firstRow, Integer lastRow, Integer firstCol, Integer lastCol) {
         DataValidationHelper helper = xssfWsheet.getDataValidationHelper();
         CellRangeAddressList addressList = new CellRangeAddressList(firstRow, lastRow, firstCol, lastCol);
         DataValidationConstraint constraint = helper.createExplicitListConstraint(list);
@@ -435,7 +435,7 @@ public class ExcelUtils {
      * @param k
      * @param jRow
      */
-    public static void setExcelStyles(HashMap notBorderMap, Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, int k, int jRow) {
+    private static void setExcelStyles(HashMap notBorderMap, Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, int k, int jRow) {
         Boolean border = true;
         if (notBorderMap != null) {
             Integer[] borderInt = (Integer[]) notBorderMap.get(k + 1);
@@ -459,8 +459,8 @@ public class ExcelUtils {
      * @param rightBoolean 右对齐
      * @param height       行高
      */
-    public static void setExcelStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, Integer fontSize, Boolean bold, Boolean center, Boolean isBorder, Boolean leftBoolean,
-                                      Boolean rightBoolean, Integer fontColor, Integer height) {
+    private static void setExcelStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, Integer fontSize, Boolean bold, Boolean center, Boolean isBorder, Boolean leftBoolean,
+                                       Boolean rightBoolean, Integer fontColor, Integer height) {
         CellStyle cellStyle = wb.createCellStyle();
         //左右居中、上下居中
         if (center != null && center) {
@@ -512,7 +512,7 @@ public class ExcelUtils {
      *                     list.add(new Integer[]{10,14,null});                                     //3、颜色值 、字体大小、行高（可不设置）
      *                     hashMap.put(1,list);                                                     //第一表格
      */
-    public static void setExcelCellStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, List<Object[]> rowstyleList, int rowIndex) {
+    private static void setExcelCellStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, List<Object[]> rowstyleList, int rowIndex) {
         if (rowstyleList != null && rowstyleList.size() > 0) {
             Integer[] rowstyle = (Integer[]) rowstyleList.get(1);
             for (int i = 0; i < rowstyle.length; i++) {
@@ -559,7 +559,7 @@ public class ExcelUtils {
      *               <p>
      *               cellStyles.put(1, list);                                              //第一个表格所有自定义单元格样式
      */
-    public static void setExcelStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<Object[]>> styles, int cellIndex, int rowIndex) {
+    private static void setExcelStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<Object[]>> styles, int cellIndex, int rowIndex) {
         if (styles != null) {
             for (int z = 0; z < styles.size(); z++) {
                 List<Object[]> stylesList = styles.get(z);
@@ -616,7 +616,7 @@ public class ExcelUtils {
      * @param cell
      * @return
      */
-    public static String getCellVal(Cell cell) {
+    private static String getCellVal(Cell cell) {
         String val = null;
         if (cell != null) {
             CellType cellType = cell.getCellTypeEnum();
