@@ -13,7 +13,14 @@
         
    
   [版本-3.0教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.0.md)   
-        
+         
+## 版本 3.0 说明
+       1、导出函数式编程换成对象编程             
+       2、可保存到指定本地路径        
+       3、保存2.0版本之前的 exportForExcel(...) 函数[2.0之前版本]。
+       4、新增 exportForExcelsOptimize()  函数[3.0版本]。
+       
+             
 ## java-excel-utils
         是JAVA操作Excel导入导出的工具类，目的是简化逻辑操作、可拓展Excel导入导出配置。     
             
