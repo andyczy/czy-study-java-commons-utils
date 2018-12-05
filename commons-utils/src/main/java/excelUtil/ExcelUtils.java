@@ -1,4 +1,4 @@
-package com.github.andyczy.java.excel;
+package excelUtil;
 
 
 import org.apache.poi.ss.usermodel.*;
@@ -10,6 +10,7 @@ import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URLEncoder;
@@ -26,18 +27,14 @@ import static org.apache.poi.ss.util.CellUtil.createCell;
  */
 public class ExcelUtils {
 
-
     /**
      * 更新日志：
      * 1.解决 SimpleDateFormat 与 DecimalFormat 线程安全问题[2018-11-07]。
      */
     private static final ThreadLocal<SimpleDateFormat> fmt = new ThreadLocal<>();
     private static final String MESSAGE_FORMAT = "yyyy-MM-dd";
-
-    private static final ThreadLocal<DecimalFormat> df = new ThreadLocal<>();
-    private static final String MESSAGE_FORMAT_df = "#.###";
-    private static final String DataValidationError1 = "表格数据填写不规范！";
-    private static final String DataValidationError2 = "请选择表格列表中的数据！";
+    private static final String DataValidationError1 = "提示信息：";
+    private static final String DataValidationError2 = "数据不规范，请选择表格下拉列表中的数据！";
 
     private static final SimpleDateFormat getDateFormat() {
         SimpleDateFormat format = fmt.get();
@@ -48,6 +45,9 @@ public class ExcelUtils {
         return format;
     }
 
+    private static final ThreadLocal<DecimalFormat> df = new ThreadLocal<>();
+    private static final String MESSAGE_FORMAT_df = "#.###";
+
     private static final DecimalFormat getDecimalFormat() {
         DecimalFormat format = df.get();
         if (format == null) {
@@ -55,6 +55,82 @@ public class ExcelUtils {
             df.set(format);
         }
         return format;
+    }
+
+
+    private static final ThreadLocal<ExcelUtils> UTILS_THREAD_LOCAL = new ThreadLocal<>();
+
+    public static final ExcelUtils setExcelUtils(ExcelPojo excelPojo) {
+        ExcelUtils excelUtils = UTILS_THREAD_LOCAL.get();
+        if (excelUtils == null) {
+            excelUtils = new ExcelUtils(excelPojo);
+            UTILS_THREAD_LOCAL.set(excelUtils);
+        }
+        return excelUtils;
+    }
+
+    private static String filePath = null;
+    private static List<List<String[]>> dataLists = null;
+    private static HttpServletResponse response = null;
+    private static HashMap notBorderMap = null;
+    private static HashMap regionMap = null;
+    private static HashMap columnMap = null;
+    private static HashMap styles = null;
+    private static HashMap paneMap = null;
+    private static String fileName = null;
+    private static String[] sheetName = null;
+    private static String[] labelName = null;
+    private static HashMap rowStyles = null;
+    private static HashMap columnStyles = null;
+    private static HashMap dropDownMap = null;
+
+    public ExcelUtils(ExcelPojo excelPojo) {
+        filePath = excelPojo.getFilePath();
+        dataLists = excelPojo.getDataLists();
+        response = excelPojo.getResponse();
+        notBorderMap = excelPojo.getNotBorderMap();
+        regionMap = excelPojo.getRegionMap();
+        columnMap = excelPojo.getColumnMap();
+        styles = excelPojo.getStyles();
+        paneMap = excelPojo.getPaneMap();
+        fileName = excelPojo.getFileName();
+        sheetName = excelPojo.getSheetName();
+        labelName = excelPojo.getLabelName();
+        rowStyles = excelPojo.getRowStyles();
+        columnStyles = excelPojo.getColumnStyles();
+        dropDownMap = excelPojo.getDropDownMap();
+    }
+
+
+    /**
+     * 面向对象编程
+     *
+     * @return
+     */
+    public Boolean exportForExcelsOptimize() {
+        long startTime = System.currentTimeMillis();
+        SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
+        OutputStream outputStream = null;
+        SXSSFRow sxssfRow = null;
+        try {
+            // 设置数据
+            setDataList(sxssfWorkbook, sxssfRow, dataLists, notBorderMap, regionMap, columnMap, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
+            // io 响应
+            setIo(sxssfWorkbook, outputStream, fileName, sheetName, response, filePath);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (outputStream != null) {
+                    outputStream.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("======= Excel 工具类导出运行时间:  " + (System.currentTimeMillis() - startTime) + " ms");
+        return true;
     }
 
 
@@ -99,82 +175,15 @@ public class ExcelUtils {
                                          HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap, String fileName,
                                          String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) {
         long startTime = System.currentTimeMillis();
-        //  内存中保留 1000 条数据，以免内存溢出，其余写入硬盘。
         SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
         OutputStream outputStream = null;
         SXSSFRow sxssfRow = null;
         try {
-            int k = 0;
-            for (List<String[]> list : dataLists) {
-                SXSSFSheet sxssfSheet = sxssfWorkbook.createSheet();
-                sxssfSheet.setDefaultColumnWidth((short) 16);
-                sxssfWorkbook.setSheetName(k, sheetName[k]);
+            // 设置数据
+            setDataList(sxssfWorkbook, sxssfRow, dataLists, notBorderMap, regionMap, columnMap, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
+            // io 响应
+            setIo(sxssfWorkbook, outputStream, fileName, sheetName, response, null);
 
-                int jRow = 0;
-                //  自定义：大标题和样式。参数说明：new String[]{"表格数据一", "表格数据二", "表格数据三"}
-                if (labelName != null) {
-                    sxssfRow = sxssfSheet.createRow(jRow);
-                    Cell cell = createCell(sxssfRow, jRow, labelName[k]);
-                    setMergedRegion(sxssfSheet, 0, 0, 0, list.get(0).length - 1);
-                    setExcelStyles(cell, sxssfWorkbook, sxssfRow, 16, true, true, false, false, false, null, 399);
-                    jRow = 1;
-                }
-                //  自定义：每个单元格自定义合并单元格：对每个单元格自定义合并单元格（看该方法说明）。
-                if (regionMap != null) {
-                    setMergedRegion(sxssfSheet, (ArrayList<Integer[]>) regionMap.get(k + 1));
-                }
-                //  自定义：每个单元格自定义下拉列表：对每个单元格自定义下拉列表（看该方法说明）。
-                if (dropDownMap != null) {
-                    setDataValidation(sxssfSheet, (List<String[]>) dropDownMap.get(k + 1), list.size());
-                }
-                //  自定义：每个表格自定义列宽：对每个单元格自定义列宽（看该方法说明）。
-                if (columnMap != null) {
-                    setColumnWidth(sxssfSheet, (HashMap) columnMap.get(k + 1));
-                }
-                //  自定义：每个表格固定表头（看该方法说明）。
-                Integer pane = 1;
-                if (paneMap != null) {
-                    pane = (Integer) paneMap.get(k + 1) + (labelName != null ? 1 : 0);
-                    createFreezePane(sxssfSheet, pane);
-                }
-
-                //  写入标题与数据。
-                for (String[] listValue : list) {
-                    int columnIndex = 0;
-                    sxssfRow = sxssfSheet.createRow(jRow);
-                    for (int j = 0; j < listValue.length; j++) {
-                        Cell cells = sxssfRow.createCell(j);
-                        Cell cell = createCell(sxssfRow, columnIndex, listValue[j]);
-                        columnIndex++;
-                        //  所有单元格默认样式。
-                        setExcelStyles(notBorderMap, cell, sxssfWorkbook, sxssfRow, k, jRow);
-                        //  自定义：每个表格每一列的样式（看该方法说明）。
-                        if (columnStyles != null && jRow >= pane) {
-                            setExcelCellStyles(cell, sxssfWorkbook, sxssfRow, (List) columnStyles.get(k + 1), j);
-                        }
-                        //  自定义：每个表格每一行的样式（看该方法说明）。
-                        if (rowStyles != null) {
-                            setExcelCellStyles(cell, sxssfWorkbook, sxssfRow, (List) rowStyles.get(k + 1), jRow);
-                        }
-                        //  自定义：每一个单元格样式（看该方法说明）。
-                        if (styles != null) {
-                            setExcelStyles(cells, sxssfWorkbook, sxssfRow, (List<List<Object[]>>) styles.get(k + 1), j, jRow);
-                        }
-                    }
-                    jRow++;
-                }
-                k++;
-            }
-            //  设置响应头信息。
-            response.setHeader("Charset", "UTF-8");
-            response.setHeader("Content-Type", "application/force-download");
-            response.setHeader("Content-Type", "application/vnd.ms-excel");
-            response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? sheetName[0] : fileName, "utf8") + ".xlsx");
-            response.flushBuffer();
-            outputStream = response.getOutputStream();
-            sxssfWorkbook.write(outputStream);
-            //  处理在磁盘上支持此工作簿的临时文件。
-            sxssfWorkbook.dispose();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -189,6 +198,8 @@ public class ExcelUtils {
         System.out.println("======= Excel 工具类导出运行时间:  " + (System.currentTimeMillis() - startTime) + " ms");
         return true;
     }
+
+
 
 
     /**
@@ -271,6 +282,122 @@ public class ExcelUtils {
             e.printStackTrace();
             return null;
         }
+    }
+
+    /**
+     * 设置数据
+     *
+     * @param sxssfWorkbook
+     * @param sxssfRow
+     * @param dataLists
+     * @param notBorderMap
+     * @param regionMap
+     * @param columnMap
+     * @param styles
+     * @param paneMap
+     * @param sheetName
+     * @param labelName
+     * @param rowStyles
+     * @param columnStyles
+     * @param dropDownMap
+     */
+    private static void setDataList(SXSSFWorkbook sxssfWorkbook, SXSSFRow sxssfRow, List<List<String[]>> dataLists, HashMap notBorderMap,
+                                    HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap,
+                                    String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) {
+        int k = 0;
+        for (List<String[]> list : dataLists) {
+            SXSSFSheet sxssfSheet = sxssfWorkbook.createSheet();
+            sxssfSheet.setDefaultColumnWidth((short) 16);
+            sxssfWorkbook.setSheetName(k, sheetName[k]);
+
+            int jRow = 0;
+            //  自定义：大标题和样式。参数说明：new String[]{"表格数据一", "表格数据二", "表格数据三"}
+            if (labelName != null) {
+                sxssfRow = sxssfSheet.createRow(jRow);
+                Cell cell = createCell(sxssfRow, jRow, labelName[k]);
+                setMergedRegion(sxssfSheet, 0, 0, 0, list.get(0).length - 1);
+                setExcelStyles(cell, sxssfWorkbook, sxssfRow, 16, true, true, false, false, false, null, 399);
+                jRow = 1;
+            }
+            //  自定义：每个单元格自定义合并单元格：对每个单元格自定义合并单元格（看该方法说明）。
+            if (regionMap != null) {
+                setMergedRegion(sxssfSheet, (ArrayList<Integer[]>) regionMap.get(k + 1));
+            }
+            //  自定义：每个单元格自定义下拉列表：对每个单元格自定义下拉列表（看该方法说明）。
+            if (dropDownMap != null) {
+                setDataValidation(sxssfSheet, (List<String[]>) dropDownMap.get(k + 1), list.size());
+            }
+            //  自定义：每个表格自定义列宽：对每个单元格自定义列宽（看该方法说明）。
+            if (columnMap != null) {
+                setColumnWidth(sxssfSheet, (HashMap) columnMap.get(k + 1));
+            }
+            //  自定义：每个表格固定表头（看该方法说明）。
+            Integer pane = 1;
+            if (paneMap != null) {
+                pane = (Integer) paneMap.get(k + 1) + (labelName != null ? 1 : 0);
+                createFreezePane(sxssfSheet, pane);
+            }
+
+            //  写入标题与数据。
+            for (String[] listValue : list) {
+                int columnIndex = 0;
+                sxssfRow = sxssfSheet.createRow(jRow);
+                for (int j = 0; j < listValue.length; j++) {
+                    Cell cells = sxssfRow.createCell(j);
+                    Cell cell = createCell(sxssfRow, columnIndex, listValue[j]);
+                    columnIndex++;
+                    //  所有单元格默认样式。
+                    setExcelStyles(notBorderMap, cell, sxssfWorkbook, sxssfRow, k, jRow);
+                    //  自定义：每个表格每一列的样式（看该方法说明）。
+                    if (columnStyles != null && jRow >= pane) {
+                        setExcelCellStyles(cell, sxssfWorkbook, sxssfRow, (List) columnStyles.get(k + 1), j);
+                    }
+                    //  自定义：每个表格每一行的样式（看该方法说明）。
+                    if (rowStyles != null) {
+                        setExcelCellStyles(cell, sxssfWorkbook, sxssfRow, (List) rowStyles.get(k + 1), jRow);
+                    }
+                    //  自定义：每一个单元格样式（看该方法说明）。
+                    if (styles != null) {
+                        setExcelStyles(cells, sxssfWorkbook, sxssfRow, (List<List<Object[]>>) styles.get(k + 1), j, jRow);
+                    }
+                }
+                jRow++;
+            }
+            k++;
+        }
+    }
+
+    /**
+     * 输出本地地址 或者 response 响应
+     *
+     * @param sxssfWorkbook
+     * @param outputStream
+     * @param fileName
+     * @param sheetName
+     * @param response
+     * @param filePath
+     * @throws Exception
+     */
+    private static void setIo(SXSSFWorkbook sxssfWorkbook, OutputStream outputStream, String fileName, String[] sheetName, HttpServletResponse response, String filePath) throws Exception {
+        if (response != null && filePath == null) {
+            //  设置响应头信息。
+            response.setHeader("Charset", "UTF-8");
+            response.setHeader("Content-Type", "application/force-download");
+            response.setHeader("Content-Type", "application/vnd.ms-excel");
+            response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? sheetName[0] : fileName, "utf8") + ".xlsx");
+            response.flushBuffer();
+            outputStream = response.getOutputStream();
+        } else {
+            new Exception("response and filePath parameter Not empty !");
+        }
+        if (response == null && filePath != null) {
+            outputStream = new FileOutputStream(filePath);
+        } else {
+            new Exception("response and filePath parameter Not empty !");
+        }
+        sxssfWorkbook.write(outputStream);
+        //  处理在磁盘上支持此工作簿的临时文件。
+        sxssfWorkbook.dispose();
     }
 
 
@@ -397,6 +524,7 @@ public class ExcelUtils {
             }
         }
     }
+
 
     /**
      * 功能描述:下拉列表
