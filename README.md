@@ -16,11 +16,18 @@
   [发布的仓库地址-教程更详细](https://github.com/andyczy/czy-nexus-commons-utils)
   
          
-## 版本 3.0 说明
-       1、导出函数式编程换成对象编程             
-       2、可保存到指定本地路径        
-       3、保存2.0版本之前的 exportForExcel(...) 函数[2.0之前版本]。
-       4、新增 exportForExcelsOptimize()  函数[3.0版本]。
+## 版本 3 说明
+
+    <dependency>        
+        <groupId>com.github.andyczy</groupId>       
+        <artifactId>java-excel-utils</artifactId>       
+        <version>3.1</version>      
+    </dependency>     
+    
+    1、导出函数式编程换成对象编程             
+    2、可保存到指定本地路径        
+    3、保存2.0版本之前的 exportForExcel(...) 函数[2.0之前版本]。
+    4、新增 exportForExcelsOptimize()  函数[版本3系]。
   
 ### 如果喜欢，支持一下哈
 
