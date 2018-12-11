@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/zf.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhifubao.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/json/target/" />
     <ignored path="$PROJECT_DIR$/base/target/" />
@@ -22,11 +25,11 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="41" />
-          <entry key="project.open.time.0" value="27" />
+          <entry key="project.open.time.0" value="28" />
           <entry key="project.open.time.1" value="13" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="42" />
+          <entry key="project.opened" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -60,16 +63,16 @@
         <counts>
           <entry key="dummy" value="27" />
           <entry key="java" value="1610" />
-          <entry key="md" value="166" />
-          <entry key="txt" value="144" />
+          <entry key="md" value="195" />
+          <entry key="txt" value="145" />
           <entry key="xml" value="91" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1610" />
-          <entry key="Markdown" value="166" />
-          <entry key="PLAIN_TEXT" value="171" />
+          <entry key="Markdown" value="195" />
+          <entry key="PLAIN_TEXT" value="172" />
           <entry key="XML" value="91" />
         </counts>
       </usages-collector>
@@ -141,8 +144,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="550">
-                <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+              <first_editor relative-caret-position="795">
+                <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
               </first_editor>
               <second_editor />
             </state>
@@ -269,8 +272,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -278,104 +279,19 @@
               <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
               <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="excelUtil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="httpClientUtil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="xml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/czy/czy-study-java-commons-utils/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544494515316" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544494579042" />
     <property name="last_opened_file_path" value="E:/xintou/aim/aim-parent" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -541,6 +457,7 @@
       <workItem from="1544001398458" duration="186000" />
       <workItem from="1544068559795" duration="48000" />
       <workItem from="1544153242097" duration="142000" />
+      <workItem from="1544494372643" duration="830000" />
     </task>
     <task id="LOCAL-00001" summary="Excel工具类">
       <created>1536540899701</created>
@@ -850,7 +767,21 @@
       <option name="project" value="LOCAL" />
       <updated>1544153343997</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="更新 版本 3.2">
+      <created>1544494501145</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1544494501145</updated>
+    </task>
+    <task id="LOCAL-00046" summary="更新 版本 3.2">
+      <created>1544494548268</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1544494548268</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -871,7 +802,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37461000" />
+    <option name="totallyTimeSpent" value="38291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -884,9 +815,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18367347" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18635875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -991,7 +921,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Excel工具类:合并单元格函数" />
     <MESSAGE value="apache commons整理" />
     <MESSAGE value="项目整理" />
     <MESSAGE value="md+" />
@@ -1016,7 +945,8 @@
     <MESSAGE value="md" />
     <MESSAGE value="版本-3.0" />
     <MESSAGE value="更新 版本 3.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新 版本 3.1" />
+    <MESSAGE value="更新 版本 3.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新 版本 3.2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://E:/MavenRespository/respository/commons-lang/commons-lang/2.3/commons-lang-2.3.jar!/org/apache/commons/lang/Validate.class">
@@ -1320,8 +1250,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="550">
-            <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <first_editor relative-caret-position="795">
+            <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
           </first_editor>
           <second_editor />
         </state>
