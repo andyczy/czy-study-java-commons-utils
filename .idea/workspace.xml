@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/zf.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhifubao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/zf.jpg" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/json/target/" />
     <ignored path="$PROJECT_DIR$/base/target/" />
@@ -39,6 +37,7 @@
           <entry key="gitignore" value="1" />
           <entry key="iml" value="2" />
           <entry key="java" value="101" />
+          <entry key="jpg" value="1" />
           <entry key="md" value="4" />
           <entry key="png" value="2" />
           <entry key="pom" value="3" />
@@ -50,7 +49,7 @@
         <counts>
           <entry key="CLASS" value="62" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="Image" value="2" />
+          <entry key="Image" value="3" />
           <entry key="JAVA" value="101" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -63,7 +62,7 @@
         <counts>
           <entry key="dummy" value="27" />
           <entry key="java" value="1610" />
-          <entry key="md" value="195" />
+          <entry key="md" value="196" />
           <entry key="txt" value="145" />
           <entry key="xml" value="91" />
         </counts>
@@ -71,7 +70,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1610" />
-          <entry key="Markdown" value="195" />
+          <entry key="Markdown" value="196" />
           <entry key="PLAIN_TEXT" value="172" />
           <entry key="XML" value="91" />
         </counts>
@@ -134,7 +133,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3190">
+            <state relative-caret-position="795">
               <caret line="145" column="25" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="25" />
             </state>
           </provider>
@@ -144,12 +143,17 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="795">
-                <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+              <first_editor relative-caret-position="663">
+                <caret line="56" column="79" lean-forward="true" selection-start-line="56" selection-start-column="79" selection-end-line="56" selection-end-column="79" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zf.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -291,7 +295,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/czy/czy-study-java-commons-utils/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544496786427" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544496987370" />
     <property name="last_opened_file_path" value="E:/xintou/aim/aim-parent" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -301,6 +305,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\czy\czy-study-java-commons-utils" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="excelUtil" />
@@ -457,7 +464,7 @@
       <workItem from="1544001398458" duration="186000" />
       <workItem from="1544068559795" duration="48000" />
       <workItem from="1544153242097" duration="142000" />
-      <workItem from="1544494372643" duration="830000" />
+      <workItem from="1544494372643" duration="1141000" />
     </task>
     <task id="LOCAL-00001" summary="Excel工具类">
       <created>1536540899701</created>
@@ -781,7 +788,28 @@
       <option name="project" value="LOCAL" />
       <updated>1544494548268</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="更新 版本 3.2">
+      <created>1544496680787</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1544496680787</updated>
+    </task>
+    <task id="LOCAL-00048" summary="更新 版本 3.2">
+      <created>1544496751782</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1544496751783</updated>
+    </task>
+    <task id="LOCAL-00049" summary="更新 版本 3.2">
+      <created>1544496815315</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1544496815315</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -802,7 +830,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38291000" />
+    <option name="totallyTimeSpent" value="38602000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -949,13 +977,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新 版本 3.2" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://E:/MavenRespository/respository/commons-lang/commons-lang/2.3/commons-lang-2.3.jar!/org/apache/commons/lang/Validate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2996">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/MavenRespository/respository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar!/org/apache/commons/validator/Validator.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1233,13 +1254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3190">
-          <caret line="145" column="25" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/ExcelController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1247,11 +1261,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zf.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="145" column="25" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="795">
-            <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+          <first_editor relative-caret-position="663">
+            <caret line="56" column="79" lean-forward="true" selection-start-line="56" selection-start-column="79" selection-end-line="56" selection-end-column="79" />
           </first_editor>
           <second_editor />
         </state>
