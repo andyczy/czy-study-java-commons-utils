@@ -13,6 +13,7 @@
     <modules>
         <module>commons-utils</module>
         <module>java-base</module>
+        <module>java-8</module>
     </modules>
 
     <!-- 集中定义依赖版本号-->
