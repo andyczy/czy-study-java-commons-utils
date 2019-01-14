@@ -1,4 +1,4 @@
-package com.syiti.vbp.util.support;
+package dateUtil;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.util.TextUtils;
@@ -6,12 +6,7 @@ import org.apache.http.util.TextUtils;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 
 public class DateUtil {
@@ -47,7 +42,8 @@ public class DateUtil {
      */
     public static String getYestoryStart() {
         Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DATE, -1);          //TODO 明天时间：cal.add(Calendar.DATE,1);后天：后天就是把1改成2 ，以此类推。
+        //TODO 明天时间：cal.add(Calendar.DATE,1);后天：后天就是把1改成2 ，以此类推。
+        cal.add(Calendar.DATE, -1);
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
@@ -148,35 +144,6 @@ public class DateUtil {
         return calendar.getTime(); // 得到前beforeNum天的时间
     }
 
-
-    /**
-     * 获取某日期往前/后多少月份的日期
-     *
-     * @param nowDate
-     * @param num
-     * @return
-     * @CreateTime 2016-1-13
-     */
-    public static Date getDateMonth(Date nowDate, Integer num) {
-        Calendar calendar = Calendar.getInstance(); // 得到日历
-        calendar.setTime(nowDate);// 把当前时间赋给日历
-        calendar.add(Calendar.MONTH, num); // 设置为前/后beforeNum月份
-        return calendar.getTime();
-    }
-
-    /**
-     * 比较两个日期是否相同
-     *
-     * @param d1
-     * @param d2
-     * @return
-     */
-    public static boolean isEqualDate(Date d1, Date d2) {
-        LocalDate localDate1 = ZonedDateTime.ofInstant(d1.toInstant(), ZoneId.systemDefault()).toLocalDate();
-        LocalDate localDate2 = ZonedDateTime.ofInstant(d2.toInstant(), ZoneId.systemDefault()).toLocalDate();
-        return localDate1.isEqual(localDate2);
-    }
-
     /**
      * 返回需要的日期形式
      * </p>
@@ -228,23 +195,14 @@ public class DateUtil {
         if (TextUtils.isEmpty(format))
             format = "yyyy-MM-dd HH:mm:ss";
         SimpleDateFormat dateFormat = new SimpleDateFormat(format);
-        return dateFormat.format(time);
+        if (time != null) {
+            return dateFormat.format(time);
+        } else {
+            return "";
+        }
+
     }
 
-
-//	/**
-//	 * 转Timestamp
-//	 * @param date
-//	 * @return
-//	 */
-//	public static Timestamp getTimeStampDate(String date) {
-//		// TODO: 2018/6/24 0024 2018/05/06 多零会报错
-//		if(StringUtils.isBlank(date)){
-//			return null;
-//		}
-//		date  = date + " 00:00:00";
-//		return Timestamp.valueOf(date);
-//	}
 
     /**
      * 将时间格式字符串转换为时间 yyyy-MM-dd
@@ -264,45 +222,32 @@ public class DateUtil {
     }
 
     /**
-     * 功能：判断输入年份是否为闰年
+     * 获取某月最后一天
      *
-     * @param year
-     * @return 是：true  否：false
-     * @author LIXIN
-     */
-    public static boolean leapYear(int year) {
-        boolean leap;
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if (year % 400 == 0) leap = true;
-                else leap = false;
-            } else leap = true;
-        } else leap = false;
-        return leap;
-    }
-
-    /**
-     * 获取当月最后一天
-     *
-     * @param month
-     * @param year
+     * @param date
      * @return
      */
-    public static String getMoneyEndDay(String month, String year) {
-        if (month.equals("01") || month.equals("03") || month.equals("06") || month.equals("07") || month.equals("08") || month.equals("10") || month.equals("12")) {
-            return "31";
-        }
-        if (month.equals("04") || month.equals("06") || month.equals("09") || month.equals("11")) {
-            return "30";
-        }
-        if (month.equals("2")) {
-            if (leapYear(Integer.parseInt(year))) {
-                return "29";
-            } else {
-                return "28";
-            }
-        }
-        return null;
+    public static String getLastDayOfMonth(Date date) {
+        int year = Integer.valueOf(getNeededDateStyle(date,"yyyy"));
+        int month = Integer.valueOf(getNeededDateStyle(date,"MM"));
+
+        Calendar cal = Calendar.getInstance();
+        //设置年份
+        cal.set(Calendar.YEAR, year);
+        //设置月份
+        cal.set(Calendar.MONTH, month - 1);
+        //获取某月最大天数
+        int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+        //设置日历中月份的最大天数
+        cal.set(Calendar.DAY_OF_MONTH, lastDay);
+        //格式化日期
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String lastDayOfMonth = sdf.format(cal.getTime());
+        return lastDayOfMonth;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getLastDayOfMonth(strToDateFormat("2018-02-03")));
     }
 
 }
