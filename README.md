@@ -13,25 +13,25 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>3.2.2</version>      
+            <version>3.2.3</version>      
         </dependency> 
    
   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
  
-  [版本-3.2教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
+  [版本-3.X 教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
   
   亲自测试：WPS、office 08、10、11、12、16 能正常打开。
 
 ### 更新日志
-### 3.2.2 
+### 3.2.3 
     单表百万数据量导出时样式设置过多，导致速度慢（行、列、单元格样式暂时控制10万行、超过无样式）                          
     大数据量情况下一般不会每个单元格设置样式、不然很难解决内存溢出等问题。                 
     修改输出流（只能输出一次、如 response 响应输出，则不会输出到本地路径的。）                                   
-    修改注释（和GitHub注释一样）                   
-    去掉2.1之前的函数（exportForExcel）              
+    修改注释                            
     新增函数【本地测试：输出到本地路径、testLocalNoStyleNoResponse 】                  
     新增函数【无样式（行、列、单元格样式）、exportForExcelsNoStyle 】                
-    ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
+    初始化函数：ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
+    属性：columnMap 更改为 setMapColumnWidth
     
     目前导出速度：
     （单表）1万行、20列：1.6秒            
@@ -69,7 +69,7 @@
         excelUtils.setRegionMap(regionMap);
         
         // 自定义：对每个单元格自定义列宽（可为空）
-        excelUtils.setColumnMap(mapColumnWidth);
+        excelUtils.setMapColumnWidth(mapColumnWidth);
         // 自定义：某一行样式（可为空）
         excelUtils.setRowStyles(stylesRow);
         // 自定义：某一列样式（可为空）
