@@ -13,35 +13,41 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>3.2.5</version>      
+            <version>4.0</version>      
         </dependency> 
    
   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
  
-  [版本-3.X 教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
+  [教程说明](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-Andyczy.md)   
   
-  亲自测试：WPS、office 08、10、11、12、16 能正常打开。
+  亲自测试：WPS、office 07、08、09、10、11、12、16 能正常打开。其他版本待测试！
+  注:POI SXSSFWorkbook 最高限制1048576行,16384列
 
 ### 更新日志
-### 3.2.5
     单表百万数据量导出时样式设置过多，导致速度慢（行、列、单元格样式暂时控制10万行、超过无样式）                          
     大数据量情况下一般不会每个单元格设置样式、不然很难解决内存溢出等问题。                 
     修改输出流（只能输出一次、如 response 响应输出，则不会输出到本地路径的。）                                   
     修改注释                            
-    新增函数【本地测试：输出到本地路径、testLocalNoStyleNoResponse 】                  
-    新增函数【无样式（行、列、单元格样式）、exportForExcelsNoStyle 】                
+    新增函数【ExcelUtils.testLocalNoStyleNoResponse() 、本地测试：输出到本地路径】                  
+    新增函数【ExcelUtils.exportForExcelsNoStyle()、无样式（行、列、单元格样式）推荐使用这个函数、提高速度】                
     初始化函数：ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
     属性：columnMap 更改为 setMapColumnWidth
     
     目前导出速度：
     （单表）1万行、20列：1.6秒            
-    （单表）10万行、20列：12秒                 
-    （单表）20万行、20列：37秒            
+    （单表）10万行、20列：11秒                 
+    （单表）20万行、20列：27秒     
+    （单表）104万行、20列：46秒            
     
     （4张表）1*4万行、20列：6秒           
-    （4张表）10*4万行、20列：35秒                     
-    （4张表）20*4万行、20列：66秒         
+    （4张表）10*4万行、20列：33秒                     
+    （4张表）20*4万行、20列：61秒
+    （4张表）100*4万行、20列：85秒
+             
+    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类
     
 ### 下次准备更新
     单表超过百万数据、自动分表。      
     优化速度和内存溢出问题。                   
+      
+ 

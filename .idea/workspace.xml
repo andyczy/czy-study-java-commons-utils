@@ -22,13 +22,13 @@
     <session id="1037378791">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="51" />
-          <entry key="project.open.time.0" value="30" />
+          <entry key="project.closed" value="52" />
+          <entry key="project.open.time.0" value="31" />
           <entry key="project.open.time.1" value="19" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="52" />
+          <entry key="project.opened" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -63,16 +63,16 @@
         <counts>
           <entry key="dummy" value="27" />
           <entry key="java" value="2077" />
-          <entry key="md" value="197" />
-          <entry key="txt" value="156" />
+          <entry key="md" value="199" />
+          <entry key="txt" value="178" />
           <entry key="xml" value="91" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2077" />
-          <entry key="Markdown" value="197" />
-          <entry key="PLAIN_TEXT" value="183" />
+          <entry key="Markdown" value="199" />
+          <entry key="PLAIN_TEXT" value="205" />
           <entry key="XML" value="91" />
         </counts>
       </usages-collector>
@@ -83,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="109">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="330">
                 <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               </first_editor>
               <second_editor />
@@ -209,6 +209,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -327,15 +329,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/czy/czy-study-java-commons-utils/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548923093893" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548984006615" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -515,13 +515,7 @@
       <workItem from="1548920741160" duration="119000" />
       <workItem from="1548922977290" duration="28000" />
       <workItem from="1548923083843" duration="43000" />
-    </task>
-    <task id="LOCAL-00010" summary="Excel工具类导出：添加大标题(表头)">
-      <created>1536830244774</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1536830244774</updated>
+      <workItem from="1548983959631" duration="79000" />
     </task>
     <task id="LOCAL-00011" summary="Excel工具类优化">
       <created>1536888359554</created>
@@ -859,7 +853,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548923098284</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="3.2.5 导入默认从第二行开始获取数据">
+      <created>1548984025646</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1548984025646</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -880,7 +881,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44174000" />
+    <option name="totallyTimeSpent" value="44253000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -893,9 +894,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20247047" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20515575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1000,7 +1000,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="md+" />
     <MESSAGE value="工具类更新" />
     <MESSAGE value="apache commons codec 工具类：md5  base64  hex" />
     <MESSAGE value="Excel工具类导出：添加大标题(表头)" />
@@ -1025,7 +1024,8 @@
     <MESSAGE value="JAVA8基本学习" />
     <MESSAGE value="获取某月最后一天" />
     <MESSAGE value="md" />
-    <option name="LAST_COMMIT_MESSAGE" value="md" />
+    <MESSAGE value="3.2.5 导入默认从第二行开始获取数据" />
+    <option name="LAST_COMMIT_MESSAGE" value="3.2.5 导入默认从第二行开始获取数据" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/java-base/src/main/java/conllection/list/list_array/ourseArray/ListTest.java">
@@ -1341,8 +1341,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="109">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="330">
             <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           </first_editor>
           <second_editor />
