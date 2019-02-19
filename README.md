@@ -21,6 +21,8 @@
   亲自测试：WPS、office 07、08、09、10、11、12、16 能正常打开。其他版本待测试！
   注:POI SXSSFWorkbook 最高限制1048576行,16384列
 
+
+[https://github.com/andyczy/czy-study-java-commons-utils/blob/master/sqm.png]
 ### 更新日志
     单表百万数据量导出时样式设置过多，导致速度慢（行、列、单元格样式暂时控制10万行、超过无样式）                          
     大数据量情况下一般不会每个单元格设置样式、不然很难解决内存溢出等问题。                 
@@ -42,7 +44,7 @@
     （4张表）20*4万行、20列：61秒
     （4张表）100*4万行、20列：85秒
              
-    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类
+    【4.0】新增 LocalExcelUtils 对象、excelUtil.ExcelUtilsTest 本地测试、CommonsUtils工具类
     
 ### 下次准备更新
     单表超过百万数据、自动分表。      
