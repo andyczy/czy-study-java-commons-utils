@@ -2,118 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_andyczy_java_excel_utils_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_05.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-utils/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-8/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-8/src/main/java/excelUtils/ExcelUtilsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-8/src/main/java/io/FlieOutputStreamTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_net_commons_net_3_6.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/commons-utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/commons-utils.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/ExcelController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/ExcelPojo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/ExcelUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/excelUtil/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/ftpUtil/FtpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/ftpUtil/FtpUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpClientUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpClientUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/target/classes/excelUtil/ExcelController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/target/classes/ftpUtil/FtpUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/target/classes/httpClientUtil/HttpClientUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-8/java-8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/java-8.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-8/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/java-base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-base/java-base.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-base/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/Book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/pojo/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/conllection/CollectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/conllection/CollectionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/conllection/list/list_array/ourseArray/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/conllection/list/list_array/ourseArray/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/conllection/list/list_array/ourseArray/ListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/conllection/list/list_array/ourseArray/ListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/conllection/list/list_linked/dome2/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/conllection/list/list_linked/dome2/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/conllection/print/EnumerationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/conllection/print/EnumerationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/conllection/print/ForeachTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/conllection/print/ForeachTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/conllection/set/hashSet/HashSetDom.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/conllection/set/hashSet/HashSetDom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/conllection/set/treeSet/TreeSetDom02.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/conllection/set/treeSet/TreeSetDom02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/field/ShowField.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/field/ShowField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/field/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/field/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/io/FlieOutputStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/io/Serialization_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/io/Serialization_test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/lambda/ExampleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/lambda/ExampleList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/lambda/ExampleMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/lambda/ExampleMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/reflection/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/reflection/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/RunnableDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/RunnableDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/ThreadDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/ThreadDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example01/SyncDubbo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example01/SyncDubbo1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example01/SyncDubbo2.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example01/SyncDubbo2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example01/test6/ChangeLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example01/test6/ChangeLock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example01/test6/DeadLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example01/test6/DeadLock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example01/test6/Optimize.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example01/test6/Optimize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example01/test6/StringLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example01/test6/StringLock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_001/T.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example02/c_001/T.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_006/T.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example02/c_006/T.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_008/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example02/c_008/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_013/T.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example02/c_013/T.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_017/T.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example02/c_017/T.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_021/MyContainer2.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example02/c_021/MyContainer2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_024/TicketSeller1.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example02/c_024/TicketSeller1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_025/T01_ConcurrentMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-8/src/main/java/thread/example02/c_025/T01_ConcurrentMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/Book/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/conllection/CollectionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/conllection/list/list_array/ourseArray/Course.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/conllection/list/list_array/ourseArray/ListTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/conllection/list/list_linked/dome2/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/conllection/print/EnumerationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/conllection/print/ForeachTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/conllection/set/hashSet/HashSetDom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/conllection/set/treeSet/TreeSetDom02.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/field/ShowField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/field/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/io/FlieOutputStream.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/io/Serialization_test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/reflection/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/RunnableDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/TestRunnableThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/TestThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/ThreadDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/SyncDubbo1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/SyncDubbo1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/SyncDubbo2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/SyncDubbo2$Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/SyncDubbo2$Sub.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/SyncDubbo2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/ChangeLock$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/ChangeLock$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/ChangeLock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/DeadLock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/Optimize$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/Optimize$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/Optimize.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/StringLock$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/StringLock$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example01/test6/StringLock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example02/c_001/T.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example02/c_006/T.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example02/c_008/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example02/c_013/T.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example02/c_017/T.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example02/c_021/MyContainer2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example02/c_024/TicketSeller1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-base/target/classes/thread/example02/c_025/T01_ConcurrentMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/json/target/" />
     <ignored path="$PROJECT_DIR$/base/target/" />
@@ -150,7 +40,7 @@
           <entry key="iml" value="2" />
           <entry key="java" value="139" />
           <entry key="jpg" value="3" />
-          <entry key="md" value="11" />
+          <entry key="md" value="12" />
           <entry key="png" value="4" />
           <entry key="pom" value="3" />
           <entry key="properties" value="1" />
@@ -163,7 +53,7 @@
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="7" />
           <entry key="JAVA" value="139" />
-          <entry key="Markdown" value="11" />
+          <entry key="Markdown" value="12" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="1" />
           <entry key="UML" value="1" />
@@ -174,7 +64,7 @@
         <counts>
           <entry key="dummy" value="27" />
           <entry key="java" value="2142" />
-          <entry key="md" value="202" />
+          <entry key="md" value="241" />
           <entry key="txt" value="181" />
           <entry key="xml" value="125" />
         </counts>
@@ -182,7 +72,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2142" />
-          <entry key="Markdown" value="202" />
+          <entry key="Markdown" value="241" />
           <entry key="PLAIN_TEXT" value="208" />
           <entry key="XML" value="125" />
         </counts>
@@ -191,6 +81,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="506">
+                <caret line="23" column="83" selection-start-line="23" selection-start-column="83" selection-end-line="23" selection-end-column="83" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/java-8/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -216,16 +118,6 @@
               <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zf.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zf_d.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -288,7 +180,6 @@
         <option value="$PROJECT_DIR$/java-8/src/main/java/lambda/ambda.java" />
         <option value="$PROJECT_DIR$/java-8/src/main/java/lambda/Lambda.java" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/dateUtil/DateUtil.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/java-base/pom.xml" />
         <option value="$PROJECT_DIR$/java-base/src/main/java/json/gson/jsonList/GsonArrayBookTest.java" />
         <option value="$PROJECT_DIR$/java-base/src/main/java/io/FlieOutputStream.java" />
@@ -305,6 +196,7 @@
         <option value="$PROJECT_DIR$/java-8/src/main/java/field/Test.java" />
         <option value="$PROJECT_DIR$/commons-utils/pom.xml" />
         <option value="$PROJECT_DIR$/java-8/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -359,84 +251,6 @@
               <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
               <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-8" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-8" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-8" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-8" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
-              <item name="java-base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -447,7 +261,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/czy/czy-study-java-commons-utils/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550560576941" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550560809255" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -470,8 +284,8 @@
       <recent name="excelUtil" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\czy\czy-study-java-commons-utils\commons-utils" />
       <recent name="E:\czy\czy-study-java-commons-utils" />
+      <recent name="E:\czy\czy-study-java-commons-utils\commons-utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -644,21 +458,7 @@
       <workItem from="1548923083843" duration="43000" />
       <workItem from="1548983959631" duration="79000" />
       <workItem from="1550221319258" duration="98000" />
-      <workItem from="1550557565527" duration="2885000" />
-    </task>
-    <task id="LOCAL-00013" summary="Excel工具类优化">
-      <created>1536894300080</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1536894300080</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Excel工具类优化">
-      <created>1536897015891</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1536897015891</updated>
+      <workItem from="1550557565527" duration="3241000" />
     </task>
     <task id="LOCAL-00015" summary="每个单元格自定义列宽[2018-09-18]">
       <created>1537236221597</created>
@@ -989,7 +789,21 @@
       <option name="project" value="LOCAL" />
       <updated>1550221403801</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="4.0">
+      <created>1550560550275</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1550560550276</updated>
+    </task>
+    <task id="LOCAL-00063" summary="4.0">
+      <created>1550560649938</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1550560649938</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1025,7 +839,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47236000" />
+    <option name="totallyTimeSpent" value="47592000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1040,7 +854,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21106337" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.044575725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1379,16 +1193,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="396">
-            <caret line="18" selection-start-line="18" selection-end-line="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/java-8/src/main/java/io/FlieOutputStreamTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1515,6 +1319,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zf.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zf_d.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/commons-utils/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1522,11 +1332,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zf.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zf_d.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="506">
+            <caret line="23" column="83" selection-start-line="23" selection-start-column="83" selection-end-line="23" selection-end-column="83" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
