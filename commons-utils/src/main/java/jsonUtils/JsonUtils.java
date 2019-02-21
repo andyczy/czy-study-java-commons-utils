@@ -14,7 +14,7 @@ import java.util.List;
  * @问题
  * @说明
  * @URL地址
- * @进度描述
+ * @进度描述 于jackson封装的json转换工具类
  */
 public class JsonUtils {
 

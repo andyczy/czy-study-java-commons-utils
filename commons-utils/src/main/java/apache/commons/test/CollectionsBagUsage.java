@@ -3,7 +3,7 @@ package apache.commons.test;
 import org.apache.commons.collections.Bag;
 import org.apache.commons.collections.BagUtils;
 import org.apache.commons.collections.bag.HashBag;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author Chenzhengyou
