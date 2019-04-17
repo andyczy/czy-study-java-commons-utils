@@ -1,12 +1,11 @@
 package apache.commons.test;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.digest.DigestUtils;
 
 
 import java.util.Arrays;
 
-import static encodeUtils.EncodeUtils.*;
+import static HexUtils.HexUtils.*;
 
 /**
  * @author Chenzhengyou

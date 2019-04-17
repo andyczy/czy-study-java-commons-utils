@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpClientUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/EncodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/apache/commons/test/EncodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/encodeUtils/EncodeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/HexUtils/HexUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/json/target/" />
     <ignored path="$PROJECT_DIR$/base/target/" />
@@ -42,7 +41,7 @@
           <entry key="class" value="86" />
           <entry key="gitignore" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="175" />
+          <entry key="java" value="180" />
           <entry key="jpg" value="3" />
           <entry key="md" value="15" />
           <entry key="png" value="4" />
@@ -56,7 +55,7 @@
           <entry key="CLASS" value="86" />
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="7" />
-          <entry key="JAVA" value="175" />
+          <entry key="JAVA" value="180" />
           <entry key="Markdown" value="15" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="1" />
@@ -67,7 +66,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="31" />
-          <entry key="java" value="2352" />
+          <entry key="java" value="2359" />
           <entry key="md" value="249" />
           <entry key="txt" value="201" />
           <entry key="xml" value="157" />
@@ -75,7 +74,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2352" />
+          <entry key="JAVA" value="2359" />
           <entry key="Markdown" value="249" />
           <entry key="PLAIN_TEXT" value="232" />
           <entry key="XML" value="157" />
@@ -85,11 +84,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="50" column="110" lean-forward="true" selection-start-line="50" selection-start-column="63" selection-end-line="50" selection-end-column="110" />
+            <state relative-caret-position="132">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,10 +106,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpUtil.java">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/ftpUtil/FtpUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="30" column="21" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="21" />
+            <state relative-caret-position="-2901">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/jdbc/JDBCUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/HexUtils/HexUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/dateUtil/DateUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4378">
+              <caret line="199" column="18" selection-start-line="199" selection-start-column="18" selection-end-line="199" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,6 +167,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/validatorUtil/ValidatorUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1210">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,8 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/java-base/src/main/java/Book.java" />
-        <option value="$PROJECT_DIR$/java-base/src/main/java/field/Test.java" />
         <option value="$PROJECT_DIR$/java-base/src/main/java/conllection/list/list_linked/dome2/Client.java" />
         <option value="$PROJECT_DIR$/java-base/src/main/java/calss/Test.java" />
         <option value="$PROJECT_DIR$/java-base/src/main/java/reflection/Test.java" />
@@ -205,8 +259,10 @@
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpClientUtil.java" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/test.java" />
         <option value="$PROJECT_DIR$/commons-utils/pom.xml" />
-        <option value="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpUtil.java" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/Test.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpUtil.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/HexUtils/EncodeUtils.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/HexUtils/HexUtils.java" />
       </list>
     </option>
   </component>
@@ -293,7 +349,43 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cookieUtils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dateUtil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptionUtil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ftpUtil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="HexUtils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
@@ -311,7 +403,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="uuidUtils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="validatorUtil" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -324,7 +434,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/czy/czy-study-java-commons-utils/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555469959955" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555471081885" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -520,14 +630,7 @@
       <workItem from="1550568017490" duration="128000" />
       <workItem from="1550717044461" duration="124000" />
       <workItem from="1550717786694" duration="4030000" />
-      <workItem from="1555469321064" duration="638000" />
-    </task>
-    <task id="LOCAL-00018" summary="自定义列宽">
-      <created>1537350454321</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1537350454321</updated>
+      <workItem from="1555469321064" duration="2007000" />
     </task>
     <task id="LOCAL-00019" summary="功能描述: 自定义列宽">
       <created>1537405155487</created>
@@ -865,7 +968,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550720566203</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="http 请求工具类：包含get post请求">
+      <created>1555470038540</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1555470038541</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -901,7 +1011,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53521000" />
+    <option name="totallyTimeSpent" value="54890000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -914,9 +1024,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2518797" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2518797" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1021,7 +1130,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Excel工具类导出：添加大标题(表头)" />
     <MESSAGE value="Excel工具类优化" />
     <MESSAGE value="每个单元格自定义列宽[2018-09-18]" />
     <MESSAGE value="合并单元格、大标题和样式" />
@@ -1046,7 +1154,8 @@
     <MESSAGE value="3.2.5 导入默认从第二行开始获取数据" />
     <MESSAGE value="4.0" />
     <MESSAGE value="apache commons lang3" />
-    <option name="LAST_COMMIT_MESSAGE" value="apache commons lang3" />
+    <MESSAGE value="http 请求工具类：包含get post请求" />
+    <option name="LAST_COMMIT_MESSAGE" value="http 请求工具类：包含get post请求" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -1111,13 +1220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/jdbc/JDBCUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commons-utils/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1132,13 +1234,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/encodeUtils/EncodeUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-679">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1230,13 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-792">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/dateUtil/DateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-547">
-          <caret line="199" column="18" selection-start-line="199" selection-start-column="18" selection-end-line="199" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1372,30 +1460,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/validatorUtil/ValidatorUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/uuidUtils/UUIDUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/ftpUtil/FtpUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1416,20 +1484,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/HttpUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="21" />
+        <state relative-caret-position="418">
+          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/httpClientUtil/Test.java">
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/ftpUtil/FtpUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="50" column="110" lean-forward="true" selection-start-line="50" selection-start-column="63" selection-end-line="50" selection-end-column="110" />
+        <state relative-caret-position="-2901">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/jdbc/JDBCUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/HexUtils/HexUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/dateUtil/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4378">
+          <caret line="199" column="18" selection-start-line="199" selection-start-column="18" selection-end-line="199" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/validatorUtil/ValidatorUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1210">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

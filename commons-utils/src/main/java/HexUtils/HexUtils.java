@@ -1,4 +1,4 @@
-package encodeUtils;
+package HexUtils;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -8,9 +8,9 @@ import java.io.UnsupportedEncodingException;
 /**
  * Author: 陈郑游
  * CreateTime: 2018-09-13 9:31
- * Description:
+ * Description:加密
  */
-public class EncodeUtils {
+public class HexUtils {
 
     /**
      * md5加密
