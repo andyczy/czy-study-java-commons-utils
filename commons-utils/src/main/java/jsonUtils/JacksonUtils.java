@@ -16,7 +16,7 @@ import java.util.List;
  * @URL地址
  * @进度描述 于jackson封装的json转换工具类
  */
-public class JsonUtils {
+public class JacksonUtils {
 
     // 定义jackson对象
     private static final ObjectMapper MAPPER = new ObjectMapper();

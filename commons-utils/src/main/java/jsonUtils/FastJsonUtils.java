@@ -50,7 +50,7 @@ public class FastJsonUtils {
      * 功能描述：把JSON数据转换成较为复杂的List<Map<String, Object>>
      *
      * @param jsonData JSON数据
-     * @return List<Map   <   String   ,       Object>>
+     * @return List<Map       <       String       ,               Object>>
      */
     public static List<Map<String, Object>> getJsonToListMap(String jsonData) {
         return JSON.parseObject(jsonData, new TypeReference<List<Map<String, Object>>>() {
