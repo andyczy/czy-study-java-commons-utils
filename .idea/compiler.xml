@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="commons-utils" />
         <module name="java-8" />
-        <module name="java-base" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

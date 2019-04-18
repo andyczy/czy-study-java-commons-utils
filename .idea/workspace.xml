@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6ac73528-5e71-4b2e-90dd-79a7ba0be24e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/FastJsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/FastJsonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/JacksonUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/json/target/" />
     <ignored path="$PROJECT_DIR$/base/target/" />
@@ -41,7 +39,7 @@
           <entry key="class" value="86" />
           <entry key="gitignore" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="182" />
+          <entry key="java" value="184" />
           <entry key="jpg" value="3" />
           <entry key="md" value="15" />
           <entry key="png" value="4" />
@@ -55,7 +53,7 @@
           <entry key="CLASS" value="86" />
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="7" />
-          <entry key="JAVA" value="182" />
+          <entry key="JAVA" value="184" />
           <entry key="Markdown" value="15" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="1" />
@@ -66,17 +64,17 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="32" />
-          <entry key="java" value="2359" />
+          <entry key="java" value="2368" />
           <entry key="md" value="249" />
-          <entry key="txt" value="201" />
+          <entry key="txt" value="205" />
           <entry key="xml" value="158" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2359" />
+          <entry key="JAVA" value="2368" />
           <entry key="Markdown" value="249" />
-          <entry key="PLAIN_TEXT" value="233" />
+          <entry key="PLAIN_TEXT" value="237" />
           <entry key="XML" value="158" />
         </counts>
       </usages-collector>
@@ -96,8 +94,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commons-utils/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
+            <state relative-caret-position="2134">
               <caret line="97" column="32" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/redisUtil/RedisUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-286">
+              <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/cookieUtils/CookieUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-44">
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -115,7 +131,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/JacksonUtils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-723">
@@ -156,7 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/java-base/src/main/java/calss/Test.java" />
         <option value="$PROJECT_DIR$/java-base/src/main/java/reflection/Test.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/java-base/src/main/java/thread/example02/c_001/T.java" />
@@ -207,6 +222,7 @@
         <option value="$PROJECT_DIR$/commons-utils/pom.xml" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/FastJsonUtils.java" />
         <option value="$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/JacksonUtils.java" />
+        <option value="$PROJECT_DIR$/commons-utils/src/main/java/redisUtil/RedisUtil.java" />
       </list>
     </option>
   </component>
@@ -364,6 +380,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="redisUtil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="czy-study-java-commons-utils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="czy-study-java-commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="commons-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="uuidUtils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -387,7 +412,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/czy/czy-study-java-commons-utils/commons-utils/src/main/java/apache/commons/ValidatorTTest.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555555853935" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555556123309" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -584,14 +609,7 @@
       <workItem from="1550717044461" duration="124000" />
       <workItem from="1550717786694" duration="4030000" />
       <workItem from="1555469321064" duration="2620000" />
-      <workItem from="1555555220679" duration="633000" />
-    </task>
-    <task id="LOCAL-00020" summary="功能描述: 自定义列宽">
-      <created>1537408038999</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1537408038999</updated>
+      <workItem from="1555555220679" duration="901000" />
     </task>
     <task id="LOCAL-00021" summary="修改注释">
       <created>1537408750772</created>
@@ -929,7 +947,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555473312157</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="json">
+      <created>1555556039314</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1555556039315</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -965,7 +990,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56136000" />
+    <option name="totallyTimeSpent" value="56404000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -978,9 +1003,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18313642" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24328679" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1011,7 +1035,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32975295" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18313642" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24328679" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1085,7 +1109,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="每个单元格自定义列宽[2018-09-18]" />
     <MESSAGE value="合并单元格、大标题和样式" />
     <MESSAGE value="自定义列宽" />
     <MESSAGE value="功能描述: 自定义列宽" />
@@ -1110,19 +1133,10 @@
     <MESSAGE value="apache commons lang3" />
     <MESSAGE value="http 请求工具类：包含get post请求" />
     <MESSAGE value="加密" />
-    <option name="LAST_COMMIT_MESSAGE" value="加密" />
+    <MESSAGE value="json" />
+    <option name="LAST_COMMIT_MESSAGE" value="json" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="594">
-            <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/java-8/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1175,13 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/cookieUtils/CookieUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1485,13 +1492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commons-utils/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="97" column="32" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/jsonUtils/FastJsonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1510,6 +1510,27 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2134">
+          <caret line="97" column="32" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/redisUtil/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-286">
+          <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commons-utils/src/main/java/cookieUtils/CookieUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
         </state>
       </provider>
     </entry>

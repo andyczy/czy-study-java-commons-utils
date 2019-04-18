@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/commons-utils/commons-utils.iml" filepath="$PROJECT_DIR$/commons-utils/commons-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" filepath="$PROJECT_DIR$/.idea/czy-study-java-commons-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-8/java-8.iml" filepath="$PROJECT_DIR$/java-8/java-8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/java-base/java-base.iml" filepath="$PROJECT_DIR$/java-base/java-base.iml" />
     </modules>
   </component>
 </project>

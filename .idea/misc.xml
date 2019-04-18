@@ -11,6 +11,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/java-base/pom.xml" />
         <option value="$PROJECT_DIR$/json/pom.xml" />
         <option value="$PROJECT_DIR$/lambda/pom.xml" />
         <option value="$PROJECT_DIR$/xml/pom.xml" />

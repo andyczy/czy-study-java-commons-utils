@@ -12,7 +12,6 @@
 
     <modules>
         <module>commons-utils</module>
-        <module>java-base</module>
         <module>java-8</module>
     </modules>
 
