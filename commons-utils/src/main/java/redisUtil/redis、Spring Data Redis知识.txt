@@ -1,0 +1,9 @@
+https://gitbook.cn/gitchat/column/5a4ce2005e04d7622ba2b256#catalog
+
+Jedis 是最受欢迎的 Redis 的 Java 版本的 Client 的实现端。这种使用方式属于裸用，就是不加任何修饰，直接通过 Jedis 操作 Redis 的 N 多特性。
+
+主要有这么几种方式：
+    基本使用；
+    连接池的使用；
+    高可用连接（master/salve）；
+    客户端分片。
