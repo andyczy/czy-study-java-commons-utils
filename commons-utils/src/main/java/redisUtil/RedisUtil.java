@@ -1,6 +1,10 @@
 package redisUtil;
 
 import com.alibaba.fastjson.JSON;
+import org.apache.commons.lang3.SerializationException;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.core.*;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -25,7 +29,7 @@ public class RedisUtil {
         this.redisTemplate = redisTemplate;
     }
 
-    public void setStringRedisTemplate(StringRedisTemplate stringRedisTemplate) {
+    public static void setStringRedisTemplate(StringRedisTemplate stringRedisTemplate) {
         this.stringRedisTemplate = stringRedisTemplate;
     }
 
