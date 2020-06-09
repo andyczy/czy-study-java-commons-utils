@@ -30,7 +30,7 @@ public class RedisUtil {
     }
 
     public static void setStringRedisTemplate(StringRedisTemplate stringRedisTemplate) {
-        this.stringRedisTemplate = stringRedisTemplate;
+        RedisUtil.stringRedisTemplate = stringRedisTemplate;
     }
 
     /**
