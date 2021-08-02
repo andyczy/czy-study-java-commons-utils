@@ -134,7 +134,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
-            <version>RELEASE</version>
+            <version>1.21</version>
             <scope>compile</scope>
         </dependency>
 
